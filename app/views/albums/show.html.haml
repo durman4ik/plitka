@@ -1,0 +1,5 @@
+= render 'static/header'
+.wrapper
+  - @album.images.each do |image|
+    = image_tag image.url.url, width: '200px'
+= render 'static/footer'

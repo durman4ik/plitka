@@ -1,0 +1,29 @@
+.dashboard
+  = render 'dashboards/menu'
+  .dashboard-main-wrapper
+    .blocks
+      .block.services
+        %h2.head.info
+          = 'Сейчас мы оказываем услуги:'
+          %span.link-add
+            = image_tag 'add.png', class: 'link-add'
+        .services-list
+          = render 'services/services'
+      .block.phones
+        %h2.head.info
+          = 'Наши номера телефонов:'
+        .phones-list
+          = render 'phones/phone'
+    .new-service-form{data: {state: 'hidden'}}
+      .form
+        %h2.head
+          = 'Наша новая услуга:'
+          %span.close-link
+            = image_tag 'close.png'
+        = form_for :service, url: dashboards_services_path do |f|
+          = f.text_field :title_ru, placeholder: 'Название на русском'
+          = f.text_field :title_by, placeholder: 'Название на беларусском'
+          = f.submit 'Save', class: 'btn'
+    .notifications
+      = render 'static/error'
+

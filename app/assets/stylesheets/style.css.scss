@@ -1,0 +1,1155 @@
+/* General Structure and Layout */
+
+body {
+  color: #512b1b;
+}
+
+body::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+body::-webkit-scrollbar
+{
+  width: 0; //6px чтобы скролл бар стал видимым.
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+  background-color: #D62929;
+}
+
+body.body {
+  background: #e2ddd7 url('paper_bg.jpg') repeat;
+}
+
+#header {
+  background: url('header_bg.jpg') no-repeat top center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+#header, #header_inner {
+  height: 155px;
+}
+
+#navigation {
+  right: 10px;
+  width: 450px;
+  top: 95px;
+}
+
+#content_container {
+  background: url(../../../wp-content/themes/taamiberry/images/tree.jpg) no-repeat 0 20px;
+  padding: 35px 0 0;
+}
+
+#slide_container {
+  background:url(../../../wp-content/themes/taamiberry/images/slider_bg.jpg) no-repeat 0 0;
+  height: 310px;
+  margin: 0 0 0 240px;
+  padding: 20px 60px 0;
+  overflow: hidden;
+  width: 580px;
+}
+
+#slides {
+  height: 270px;
+  overflow: hidden;
+  width: 580px;
+}
+
+.slide_content {
+  background: url(../../../wp-content/themes/taamiberry/images/slides_bg.jpg) no-repeat 0 0;
+  color: #fff;
+  height: 240px;
+  padding: 30px 360px 0 25px;
+  width: 195px;
+}
+
+#call_outs {
+  padding: 30px 0 0;
+}
+
+.callout_wrapper {
+  margin: 0 10px;
+  padding: 0 0 35px;
+  width: 220px;
+}
+
+.callout_text {
+  background: #fff url(../../../wp-content/themes/taamiberry/images/callout_bg.jpg) no-repeat 0 0;
+  padding: 20px;
+}
+
+.callout_text, .callout_link {
+  width: 180px;
+}
+
+.callout_link {
+  height: 40px;
+  padding: 10px 20px 0;
+}
+
+.tear1 {
+  background: url(../../../wp-content/themes/taamiberry/images/tear1.png) no-repeat 0 0;
+}
+
+.tear2 {
+  background: url(../../../wp-content/themes/taamiberry/images/tear2.png) no-repeat 0 0;
+}
+
+.tear3 {
+  background: url(../../../wp-content/themes/taamiberry/images/tear3.png) no-repeat 0 0;
+}
+
+#pre_footer, #footer {
+//  margin: 0 10px;
+//  width: 940px;
+}
+
+#pre_footer {
+  padding: 0 0 35px;
+}
+
+#twitter_container {
+  margin: 0 0 0 180px;
+  width: 280px;
+}
+
+#twitter_feed {
+  background: url(../../../wp-content/themes/taamiberry/images/twitter_bg.png) no-repeat 0 0;
+  height: 100px;
+  margin: 0 0 12px;
+  padding: 10px 15px 10px 75px;
+  overflow: hidden;
+  width: 190px;
+}
+
+#footer_sitemap {
+  background: url(../../../wp-content/themes/taamiberry/images/logomark.jpg) no-repeat 0 0;
+  padding: 0 0 0 105px;
+  width: 360px;
+}
+
+#pg_title {
+  background: url(../../../wp-content/themes/taamiberry/images/pagetitle_bg.jpg) no-repeat 0 0;
+  margin: 0 0 40px 250px;
+  padding: 20px 0 0 40px;
+  width: 660px;
+}
+
+#left_column {
+  padding: 80px 0 0;
+  width: 220px;
+}
+
+#right_column {
+  padding: 0 0 35px;
+  width: 700px;
+}
+
+#left_column, #right_column {
+  margin: 0 10px;
+}
+
+.breadcrumbs {
+  font-size: 1.2em;
+  padding: 0 10px 10px 0;
+  text-align: right;
+  width: 690px;
+}
+
+.paper {
+  background: #fff url(../../../wp-content/themes/taamiberry/images/whitepaper_bg.jpg) no-repeat 0 0;
+  padding: 40px;
+  width: 620px;
+}
+
+#facebook_container, #subscribe_container {
+  background: url(../../../wp-content/themes/taamiberry/images/opaque.png);
+  margin: 0 0 40px;
+  padding: 20px;
+  width: 180px;
+}
+
+#facebook_inner, #subscribe_inner {
+  color: #fff;
+  padding: 20px 15px;
+  width: 150px;
+}
+
+#facebook_inner {
+  background: #790000 url(../../../wp-content/themes/taamiberry/images/facebook_bg.jpg) no-repeat 0 0;
+}
+
+#subscribe_inner {
+  background: #790000 url(../../../wp-content/themes/taamiberry/images/subscribe_bg.jpg) no-repeat 0 0;
+}
+
+#page_footer {
+  background: url(../../../wp-content/themes/taamiberry/images/pagefooter_bg.png) no-repeat 0 0;
+  height: 55px;
+  padding: 20px 40px 0;
+  width: 620px;
+}
+
+#mc_embed_signup {
+  background: url(../../../wp-content/themes/taamiberry/images/mail.png) no-repeat 0 0;
+  margin: 30px 0 0;
+  padding: 20px 0 0 140px;
+}
+
+.archive {
+  background: #f5f0ed;
+  border-bottom: 1px solid #fff;
+  padding: 20px;
+  width: 580px;
+}
+
+.archive:first-child {
+  border-top: 1px solid #dcd5d1;
+}
+
+.archive:last-child {
+  border-bottom: 1px solid #dcd5d1;
+}
+
+.archive_thumb {
+  width: 190px;
+}
+
+.archive_text {
+  width: 370px;
+}
+
+#recipes, .sidebar-widget {
+  background: url(../../../wp-content/themes/taamiberry/images/sidenav_bg.png) no-repeat 0 0;
+  border-bottom: 1px solid #ccc1bc;
+  margin: 0 0 35px;
+  padding: 10px 0;
+  width: 220px;
+}
+
+.sidebar-widget {
+  padding: 10px;
+  width: 200px;
+}
+
+.recipe_filter {
+  background: url(../../../wp-content/themes/taamiberry/images/recipethumb_bg.png) no-repeat 0 100px;
+  font-size: 1.15em;
+  margin: 10px;
+  text-align: center;
+  width: 90px;
+}
+
+#related {
+  background: #512b1b;
+  padding: 20px 10px;
+  width: 600px;
+}
+
+#socialable {
+  background: #f5f0ed url(../../../wp-content/themes/taamiberry/images/share_logo.jpg) no-repeat bottom right;
+  padding: 40px;
+  width: 620px;
+}
+
+#comment_section {
+  background: #fff;
+  padding: 40px;
+}
+
+/* Positioning */
+
+.wrapper, h1.logo, a.logo, ul#top_nav li.dropdown, #content_container, #slide_container, .slide_content, #call_outs, .callout_wrapper, .callout_text, .tear1, .tear2, .tear3, #pre_footer, #twitter_container, #twitter_feed, #footer_sitemap, #footer, #pg_title, #body_copy, #left_column, #right_column, .breadcrumbs, .paper, #facebook_container, #facebook_inner, #page_footer, .wpcf7, #subscribe_container, #subscribe_inner, #mc_embed_signup, .archive, .archive_thumb, .archive_text, .navigation, #recipes, .recipe_filter, #related, #socialable, #comment_section, .sidebar-widget {
+  position: relative;
+}
+
+#navigation, ul#top_nav ul, .shoppingcart, .jFlowPrev, .jFlowNext, .slide_content img {
+  position: absolute;
+}
+
+/* Floats and Clearing Floats */
+
+.left, ul#top_nav li, ul#sub_nav li, ul#social li, .alignleft, ul.share li, ul.related_list li, .item_image, ul#cart-nav li {
+  float: left;
+}
+
+.right, .alignright {
+  float: right;
+}
+
+.clear, .sidebar-widget div div {
+  display: inline-block;
+}
+
+.clear:after, .sidebar-widget div div:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* Header */
+
+h1.logo, a.logo {
+  background: url("logo_11.png") no-repeat;
+  display: block;
+  height: 100px;
+  left: 10px;
+  text-indent: -9999px;
+  width: 350px;
+  top: 30px;
+  background-size: contain;
+  border-bottom: none;
+  padding: 0;
+}
+
+h1.logo a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* Main Navigation */
+
+ul#top_nav {
+  margin: 0 0 20px 48px;
+}
+
+ul#top_nav li {
+  margin: 0 0 0 15px;
+  zoom: 1;
+}
+
+ul#top_nav li a.a_about, ul#top_nav li a.a_recipes, ul#top_nav li a.a_news, ul#top_nav li a.a_buy, ul#top_nav li a.a_contact {
+  display: block;
+  height: 20px;
+  text-indent: -9999px;
+}
+
+ul#top_nav li a.a_about {
+  background: url(../../../wp-content/themes/taamiberry/images/a_about.png) no-repeat 0 0;
+  width: 53px;
+}
+
+ul#top_nav li a.a_recipes {
+  background: url(../../../wp-content/themes/taamiberry/images/a_recipes.png) no-repeat 0 0;
+  width: 66px;
+}
+
+ul#top_nav li a.a_news {
+  background: url(../../../wp-content/themes/taamiberry/images/a_news.png) no-repeat 0 0;
+  width: 128px;
+}
+
+ul#top_nav li a.a_buy {
+  background: url(../../../wp-content/themes/taamiberry/images/a_buy.png) no-repeat 0 0;
+  width: 80px;
+}
+
+ul#top_nav li a.a_contact {
+  background: url(../../../wp-content/themes/taamiberry/images/a_contact.png) no-repeat 0 0;
+  width: 70px;
+}
+
+ul#top_nav li a.a_about:hover, ul#top_nav li a.a_recipes:hover, ul#top_nav li a.a_news:hover, ul#top_nav li a.a_buy:hover, ul#top_nav li a.a_contact:hover, ul#top_nav li.hover a {
+  background-position: 0 -20px;
+}
+
+/* Home Page Slider */
+
+#controller {
+  display: none;
+}
+
+.jFlowPrev, .jFlowNext {
+  display: block;
+  height: 42px;
+  text-indent: -9999px;
+  top: 129px;
+  width: 42px;
+}
+
+.jFlowPrev {
+  background: url(../../../wp-content/themes/taamiberry/images/slider_previous.png) no-repeat 0 0;
+  left: 0;
+}
+
+.jFlowNext {
+  background: url(../../../wp-content/themes/taamiberry/images/slider_next.png) no-repeat 0 0;
+  right: 0
+}
+
+.jFlowPrev:hover, .jFlowNext:hover {
+  cursor: pointer;
+}
+
+.slide_content img {
+  right: 35px;
+  top: 40px;
+}
+
+.slide_content h2 {
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1.1em;
+  margin: 0 0 10px;
+}
+
+.slide_content p {
+  font-size: 1.275em;
+  line-height: 1.45em;
+}
+
+a.arrow, a.arrow:visited {
+  background: url(../../../wp-content/themes/taamiberry/images/a_arrow.png) no-repeat center left;
+  color: #fff;
+  display: block;
+  float: right;
+  font-size: 1.2em;
+  margin: 20px 0 0;
+  padding: 5px 0 5px 28px;
+  text-transform: lowercase;
+}
+
+a.arrow:hover, a.arrow:active {
+  text-decoration: none;
+}
+
+.buynow_button {
+  background: url(../../../wp-content/themes/taamiberry/images/buynow_button.png) no-repeat 0 0;
+  display: block;
+  height: 30px;
+  margin: 20px 0 0 75px;
+  text-indent: -9999px;
+  width: 120px;
+}
+
+.buynow_button:hover {
+  background-position: 0 -35px;
+}
+
+/* Call Outs */
+
+.callout_text img {
+  display: block;
+  margin: 0 0 15px;
+}
+
+h2.what, h2.featured, h2.news, h2.store {
+  display: block;
+  height: 20px;
+  margin: 0 0 15px;
+  text-indent: -9999px;
+}
+
+h2.what {
+  background: url(../../../wp-content/themes/taamiberry/images/h2_what.png) no-repeat 0 0;
+  width: 175px;
+}
+
+h2.featured {
+  background: url(../../../wp-content/themes/taamiberry/images/h2_featured.png) no-repeat 0 0;
+  width: 130px;
+}
+
+h2.news {
+  background: url(../../../wp-content/themes/taamiberry/images/h2_news.png) no-repeat 0 0;
+  width: 125px;
+}
+
+h2.store {
+  background: url(../../../wp-content/themes/taamiberry/images/h2_store.png) no-repeat 0 0;
+  width: 178px;
+}
+
+.callout_text p {
+  line-height: 1.7em;
+}
+
+.callout_text p, .callout_link {
+  font-size: 1.15em;
+}
+
+.callout_link a, .callout_link a:visited {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.callout_link a:hover, .callout_link a:active {
+  text-decoration: underline;
+}
+
+ul#news_posts li {
+  background: url(../../../wp-content/themes/taamiberry/images/news_divider.jpg) no-repeat center top;
+  padding: 10px 0;
+}
+
+/* Page Title */
+
+#pg_title h1 {
+  color: #890304;
+  font-size: 3.5em;
+  font-weight: 100;
+}
+
+/* Page Footer */
+
+#page_footer a, #page_footer a:visited, .wp-pagenavi a, .wp-pagenavi a:visited {
+  color: #fff;
+  font-size: 1.15em;
+  text-decoration: underline;
+}
+
+#page_footer a:hover, #page_footer a:active, .wp-pagenavi a:hover, .wp-pagenavi a:active {
+  text-decoration: none;
+}
+
+a.up {
+  background: url(../../../wp-content/themes/taamiberry/images/a_up.png) no-repeat center left;
+  padding: 5px 0 5px 15px;
+}
+
+.wp-pagenavi .pages {
+  margin: 0 15px 0 0;
+}
+
+.pages, .current {
+  color: #fff;
+  font-size: 1.15em;
+}
+
+.current, .page, .previouspostslink {
+  margin: 0 8px 0 0;
+}
+
+/* Post Styles */
+
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6, #socialable h4, h3#comments, #respond h3 {
+  font-weight: bold;
+  margin: 0 0 15px;
+}
+
+.post h1 {
+  font-size: 3.6em;
+  letter-spacing: -0.02em;
+}
+
+.post h2 {
+  font-size: 2.1em;
+  letter-spacing: -0.02em;
+}
+
+.post h3, h3#comments, #respond h3 {
+  font-size: 1.8em;
+  letter-spacing: -0.02em;
+}
+
+.post h4, #socialable h4 {
+  font-size: 1.5em;
+  letter-spacing: -0.015em;
+}
+
+.post h5 {
+  font-size: 1.1em;
+}
+
+.post h6 {
+  font-size: 1em;
+}
+
+.post p, #socialable p, #respond p {
+  margin: 15px 0;
+}
+
+.post p, .post ul, .post ol, #socialable p, #respond p, .post address {
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
+
+.post ul, .post ol {
+  margin: 15px 0 15px 30px;
+}
+
+.post ul {
+  list-style: disc;
+}
+
+.post ol {
+  list-style: decimal;
+}
+
+.post blockquote {
+  border-left: 2px solid #dcd5d1;
+  margin: 0 0 0 30px;
+  padding: 0 0 0 15px;
+}
+
+.post .post_date {
+  background: url(../../../wp-content/themes/taamiberry/images/calendar__pencil.png) no-repeat left center;
+  padding: 5px 0 5px 20px;
+}
+
+.post address {
+  font-style: normal;
+}
+
+/* Images */
+
+.post img {
+  border: 1px solid #dcd5d1;
+  padding: 4px;
+}
+
+.post img.alignleft {
+  margin: 0 15px 0 0;
+}
+
+.post img.alignright {
+  margin: 0 0 0 15px;
+}
+
+.post img.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+
+ul#side_nav li h2, #recipes h2, .sidebar-widget h2 {
+  font-size: 130%;
+  text-align: center;
+}
+
+ul#side_nav li h2 span, #recipes h2 span {
+  font-family: Palatino, Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+#facebook_inner p, #subscribe_inner p {
+  font-size: 1.15em;
+}
+
+ul#side_nav li a {
+  font-size: 1.15em;
+  line-height: 1.5em;
+}
+
+ul#side_nav {
+  background: url(../../../wp-content/themes/taamiberry/images/sidenav_bg.png) no-repeat 0 0;
+  border-bottom: 1px solid #ccc1bc;
+  margin: 0 0 35px;
+  padding: 30px 20px;
+  width: 180px;
+}
+
+ul#side_nav ul {
+  margin: 0 0 0 20px;
+}
+
+ul#side_nav li {
+  margin: 15px 0 0;
+}
+
+ul#side_nav li:first-child {
+  margin: 0;
+}
+
+ul#side_nav li ul li:first-child {
+  margin: 15px 0 0;
+}
+
+#facebook_inner h2, #subscribe_inner h2 {
+  font-size: 1.4em;
+  margin: 0 0 10px;
+}
+
+#facebook_inner p, #subscribe_inner p {
+  line-height: 1.7em;
+}
+
+a.fb_connect, a.subscribe_today {
+  display: block;
+  height: 45px;
+  margin: 15px 0 0;
+  text-indent: -9999px;
+  width: 145px;
+}
+
+a.fb_connect {
+  background: url(../../../wp-content/themes/taamiberry/images/fb_connect.png) no-repeat 0 0;
+}
+
+a.subscribe_today {
+  background: url(../../../wp-content/themes/taamiberry/images/subscribe_today.png) no-repeat 0 0;
+}
+
+.recipe_filter img {
+  display: block;
+  margin: 0 0 20px;
+}
+
+/* Hacks for the Sidebar Shopping Cart Widget */
+
+.sidebar-widget div div strong {
+  font-weight: normal;
+}
+
+.sidebar-widget div div {
+  padding: 0 0 10px;
+}
+
+.sidebar-widget a {
+  font-size: 1.15em;
+  padding: 0 0 8px;
+}
+
+.item_image {
+  margin: 0 10px 0 0;
+  padding: 0 !important;
+}
+
+.item_image img {
+  border: 1px solid #dcd5d1;
+  padding: 4px;
+}
+
+/* Share */
+
+ul.share li {
+  margin: 0 15px 0 0;
+}
+
+/* Pre Footer and Footer */
+
+#twitter_feed #twitter_update_list, #twitter_container p, ul.sitemap, #footer p {
+  font-size: 1.15em;
+}
+
+#twitter_feed #twitter_update_list {
+  line-height: 1.45em;
+}
+
+#twitter_feed #twitter_update_list span {
+  display: block;
+}
+
+#twitter_container p {
+  text-align: right;
+}
+
+ul.sitemap {
+  margin: 0 0 0 20px;
+  width: 100px;
+}
+
+ul.sitemap li {
+  margin: 0 0 5px;
+}
+
+ul#social li {
+  margin: 0 0 0 10px;
+}
+
+ul#social li a.fb_icon, ul#social li a.tweet_icon, ul#social li a.del_icon, ul#social li a.su_icon, ul#social li a.digg_icon {
+  display: block;
+  height: 16px;
+  text-indent: -9999px;
+  width: 16px;
+}
+
+ul#social li a.fb_icon {
+  background: url(../../../wp-content/themes/taamiberry/images/facebook_16.png) no-repeat 0 0;
+}
+
+ul#social li a.tweet_icon {
+  background: url(../../../wp-content/themes/taamiberry/images/twitter_16.png) no-repeat 0 0;
+}
+
+ul#social li a.del_icon {
+  background: url(../../../wp-content/themes/taamiberry/images/delicious.png) no-repeat 0 0;
+}
+
+ul#social li a.su_icon {
+  background: url(../../../wp-content/themes/taamiberry/images/stumbleupon.png) no-repeat 0 0;
+}
+
+ul#social li a.digg_icon {
+  background: url(../../../wp-content/themes/taamiberry/images/digg.png) no-repeat 0 0;
+}
+
+/* Contact Forms */
+
+//.wpcf7-form label em {
+//  color: #890304;
+//  font: italic 1.2em Palatino, Georgia, Times, "Times New Roman", serif;
+//}
+//
+//.wpcf7-form input#your-name, .wpcf7-form input#your-email, .wpcf7-form input#your-subject, .wpcf7-form input#events-name, .wpcf7-form input#events-email, .wpcf7-form input#events-phone, .wpcf7-form input#restaurant-bar, .wpcf7-form input#events-date {
+//  background: url(../../../wp-content/themes/taamiberry/images/input_text.jpg) no-repeat 0 0;
+//  height: 35px;
+//  padding: 0 5px;
+//  width: 330px;
+//}
+//
+//.wpcf7-form textarea#your-message, .wpcf7-form textarea#events-message {
+//  background: url(../../../wp-content/themes/taamiberry/images/textarea.jpg) no-repeat 0 0;
+//  border: none;
+//  height: 205px;
+//  overflow: auto;
+//  padding: 5px;
+//  width: 400px;
+//}
+//
+//.wpcf7-form input#your-name, .wpcf7-form input#your-email, .wpcf7-form input#your-subject, .wpcf7-form textarea#your-message, .wpcf7-form input#quiz-261, .wpcf7-form input#events-name, .wpcf7-form input#events-email, .wpcf7-form input#events-phone, .wpcf7-form input#restaurant-bar, .wpcf7-form input#events-date, .wpcf7-form textarea#events-message {
+//  color: #512b1b;
+//  font: 1.2em "Helvetica Nue", Helvetica, Arial, sans-serif;
+//}
+//
+//.wpcf7-form input#submit-contact, .wpcf7-form input#events-submit {
+//  -moz-border-radius: 5px;
+//  -webkit-border-radius: 5px;
+//  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+//  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+//  background: #512b1b url(../../../wp-content/themes/taamiberry/images/overlay.png) repeat-x;
+//  border-bottom: 1px solid rgba(0,0,0,0.25);
+//  color: #fff;
+//  cursor: pointer;
+//  display: inline-block;
+//  font: bold 1.1em "Helvetica Nue", Helvetica, Arial, sans-serif;
+//  line-height: 1;
+//  margin: 0;
+//  padding: 5px 10px;
+//  position: relative;
+//  text-decoration: none;
+//  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+//}
+//
+//.wpcf7-form input#quiz-261, .wpcf7-form input#quiz-144 {
+//  background: #fff;
+//  border: 1px solid #dcd5d1;
+//  margin: 0 0 0 5px;
+//  padding: 5px;
+//  width: 20px;
+//}
+//
+//.wpcf7-form input#submit-contact:hover, , .wpcf7-form input#events-submit {
+//  background-color: #3b1f14;
+//}
+//
+//.wpcf7-mail-sent-ok {
+//  color: #565c1b;
+//  font-size: 1.15em;
+//  border: none !important;
+//}
+//
+//.wpcf7-validation-errors {
+//  color: #890304;
+//  font-size: 1.15em;
+//  border: none !important;
+//}
+//
+//.wpcf7-response-output {
+//  margin: 0 !important;
+//  padding: 0 !important;
+//}
+//
+///* Newsletter Form */
+//
+//form#mc-embedded-subscribe-form {
+//  padding: 15px 0 0;
+//}
+//
+//.mc-field-group label {
+//  color: #512b1b;
+//  display: block;
+//  font-size: 1.2em;
+//  margin: 0 0 3px;
+//}
+//
+//
+//input#mc-embedded-subscribe {
+//  -moz-border-radius: 5px;
+//  -webkit-border-radius: 5px;
+//  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+//  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+//  background: #512b1b url(../../../wp-content/themes/taamiberry/images/overlay.png) repeat-x;
+//  border-bottom: 1px solid rgba(0,0,0,0.25);
+//  color: #fff;
+//  cursor: pointer;
+//  display: inline-block;
+//  font: bold 1.1em "Helvetica Nue", Helvetica, Arial, sans-serif;
+//  line-height: 1;
+//  margin: 0;
+//  padding: 5px 10px;
+//  position: relative;
+//  text-decoration: none;
+//  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+//}
+//
+//input#mc-embedded-subscribe:hover {
+//  background-color: #3b1f14;
+//}
+
+.mce_inline_error, #mce-responses {
+  font-size: 1.2em;
+  padding: 0 0 15px !important;
+}
+
+.mce_inline_error {
+  background: none !important;
+  color: #890304 !important;
+  float: none !important;
+  margin: 0 !important;
+}
+
+#mce-responses #mce-success-response {
+  color: #565c1b !important;
+}
+
+#mce-responses #mce-error-response {
+  color: #890304 !important;
+}
+
+/* Archives */
+
+.archive_text p {
+  font-size: 1.15em;
+  line-height: 1.7em;
+}
+
+a.archivelink {
+  background: url(../../../wp-content/themes/taamiberry/images/a_archivelink.jpg) no-repeat center left;
+  font-size: 1.15em;
+  padding: 5px 0 5px 15px;
+}
+
+/* Comment Form */
+
+//ol.commentlist {
+//  list-style: none;
+//  margin: 0;
+//}
+//
+//ol.commentlist li {
+//  margin: 0 0 15px;
+//  overflow: hidden;
+//}
+//
+//ol.commentlist li.alt {}
+//ol.commentlist li.bypostauthor {}
+//ol.commentlist li.byuser {}
+//ol.commentlist li.comment-author-admin {}
+//ol.commentlist li.comment {}
+//ol.commentlist li div.comment-author {}
+//
+//ol.commentlist li div.vcard {
+//  font-size: 100%;
+//  float: right;
+//  margin: 0 0 15px 15px;
+//}
+//
+//ol.commentlist li div.vcard cite.fn {
+//  font-size: 105%;
+//  font-style: normal;
+//}
+//
+//ol.commentlist li div.vcard cite.fn a.url {}
+//
+//ol.commentlist li div.vcard img.avatar {
+//  border: 1px solid #dcd5d1;
+//  display: block;
+//  margin: 0 0 3px;
+//  padding: 4px;
+//}
+//
+//ol.commentlist li div.vcard img.avatar-32 {}
+//ol.commentlist li div.vcard img.photo {}
+//
+//ol.commentlist li div.vcard span.says {
+//  font: italic 105% Palatino, Georgia, Times, "Times New Roman", serif;
+//}
+//
+//ol.commentlist li div.commentmetadata {}
+//
+//ol.commentlist li div.comment-meta {
+//  font-size: 1.1em;
+//  margin: 0 0 3px;
+//}
+//
+//ol.commentlist li div.comment-meta a {}
+//
+//ol.commentlist li p {
+//  font-size: 1.15em;
+//  line-height: 1.45em;
+//  margin: 0 0 5px;
+//}
+//
+//ol.commentlist li ul {}
+//
+//.comment-body {
+//  margin: 0 0 30px;
+//}
+//
+//ol.commentlist li div.reply {}
+//
+//ol.commentlist li div.reply a {
+//  font-weight:bold;
+//}
+//
+//ol.commentlist li ul.children {}
+//
+//ol.commentlist li ul.children li {
+//  margin: 0;
+//}
+//
+//ol.commentlist li ul.children li.alt {}
+//ol.commentlist li ul.children li.bypostauthor {}
+//ol.commentlist li ul.children li.byuser {}
+//ol.commentlist li ul.children li.comment {}
+//ol.commentlist li ul.children li.comment-author-admin {}
+//ol.commentlist li ul.children li.depth-2 {}
+//ol.commentlist li ul.children li.depth-3 {}
+//ol.commentlist li ul.children li.depth-4 {}
+//ol.commentlist li ul.children li.depth-5 {}
+//
+//ol.commentlist li ul.children li.odd {
+//  background: #f5f0ed;
+//  border: 1px solid #dcd5d1;
+//  padding: 15px;
+//}
+//
+//ol.commentlist li ul.children li.even {
+//  background: #fff;
+//  border: 1px solid #dcd5d1;
+//  padding: 15px;
+//}
+//
+//ol.commentlist li.odd {
+//  background: #f5f0ed;
+//  border: 1px solid #dcd5d1;
+//  padding: 15px;
+//}
+//
+//ol.commentlist li.even {
+//  background: #fff;
+//  border: 1px solid #dcd5d1;
+//  padding: 15px;
+//}
+//
+//ol.commentlist li.odd {}
+//ol.commentlist li.parent {}
+//ol.commentlist li.pingback {}
+//ol.commentlist li.thread-alt {}
+//ol.commentlist li.thread-even {}
+//ol.commentlist li.thread-odd {}
+
+///* Comment Form */
+//
+//#commentform label {
+//  display: block;
+//  margin: 0 0 3px;
+//}
+//
+//#commentform label em {
+//  color: #890304;
+//  font: italic 1.2em Palatino, Georgia, Times, "Times New Roman", serif;
+//}
+//
+//input#author, input#email, input#url {
+//  background: url(../../../wp-content/themes/taamiberry/images/input_text.jpg) no-repeat 0 0;
+//  height: 35px;
+//  padding: 0 5px;
+//  width: 330px;
+//}
+//
+//textarea#comment {
+//  background: url(../../../wp-content/themes/taamiberry/images/textarea.jpg) no-repeat 0 0;
+//  border: none;
+//  height: 205px;
+//  line-height: 1.3em;
+//  overflow: auto;
+//  padding: 5px;
+//  width: 400px;
+//}
+//
+//input#author, input#email, input#url, textarea#comment {
+//  color: #512b1b;
+//  font: 1.2em "Helvetica Nue", Helvetica, Arial, sans-serif;
+//}
+//
+//#commentform input#submit {
+//  -moz-border-radius: 5px;
+//  -webkit-border-radius: 5px;
+//  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+//  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+//  background: #512b1b url(../../../wp-content/themes/taamiberry/images/overlay.png) repeat-x;
+//  border-bottom: 1px solid rgba(0,0,0,0.25);
+//  color: #fff;
+//  cursor: pointer;
+//  display: inline-block;
+//  font: bold 1.1em "Helvetica Nue", Helvetica, Arial, sans-serif;
+//  line-height: 1;
+//  margin: 0;
+//  padding: 5px 10px;
+//  position: relative;
+//  text-decoration: none;
+//  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+//}
+//
+//#commentform input#submit:hover {
+//  background-color: #3b1f14;
+//}
+
+/* Related Recipes */
+
+h5.related_head {
+  background: url(../../../wp-content/themes/taamiberry/images/h5_morerecipes.jpg) no-repeat 0 0;
+  clear: both;
+  display: block;
+  height: 45px;
+  margin: 30px 0 0;
+  text-indent: -9999px;
+  width: 620px;
+}
+
+ul.related_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.related_list li {
+  background: url(../../../wp-content/themes/taamiberry/images/relatedlist_bg.jpg) no-repeat 0 125px;
+  margin: 0 10px;
+  text-align: center;
+  width: 180px;
+}
+
+ul.related_list li img {
+  border: none;
+  padding: 0;
+}
+
+ul.related_list li a img {
+  display: block;
+  margin: 0 0 25px;
+  padding: 0;
+}
+
+ul.related_list li a, ul.related_list li a:visited {
+  color: #cbc0bb;
+  text-decoration: underline;
+}
+
+ul.related_list li a:hover, ul.related_list li a:active {
+  color: #fff;
+}

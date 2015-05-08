@@ -1,0 +1,19 @@
+.dashboard-menu-wrapper
+  %h5
+    Здравствуйте, Администратор!
+    -#= "#{current_admin.name}!"
+  .menu-links
+    = link_to 'Основная', dashboard_path
+    = link_to 'Портфолио', dashboard_portfolio_path
+    = link_to 'Информация о себе'
+    = link_to 'Статьи'
+  .exit-link
+    = link_to root_path, class: 'button green' do
+      = image_tag 'left.png', width: '20px'
+      %span К сайту
+    %br
+    = link_to destroy_admin_session_path, method: :delete, class: 'button' do
+      = image_tag('logout-512.png', width: '20px')
+      %span Выйти
+
+

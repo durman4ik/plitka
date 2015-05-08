@@ -1,0 +1,15 @@
+.phones-list
+  - @phones.each do |phone|
+    %p
+      = phone.number + ' ' + phone.operator
+      = link_to 'Удалить', dashboards_phone_path(phone), method: :delete, remote: true
+- if Phone.all.length < 3
+  .phone-form
+    = form_for :phone, url:   dashboards_phones_path do |f|
+      = f.label :number
+      = f.telephone_field :number
+      %br
+      = f.label :operator
+      = f.collection_select :operator, Phone::OPERATORS, :to_s, :to_s
+
+      = f.submit 'Сохранить'

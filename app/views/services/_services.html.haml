@@ -1,0 +1,10 @@
+- @services.each do |service|
+  .line
+    %li.service
+      - if I18n.locale == 'ru'
+        = service.title_ru
+      - else
+        = service.title_by
+      = link_to dashboards_service_path(service), method: :delete, remote: true, class: 'remove',
+      :data => { :confirm => 'Вы уверены?' } do
+        = image_tag 'remove.png'

@@ -1,0 +1,13 @@
+=render 'static/header'
+%section.first
+  .first-section-wrapper.wrapper
+    .phones
+      .info
+        =t('home.main_text')
+      .numbers
+        - @phones.each do |x|
+          .phone
+            = x.number + ' ' + x.operator
+            %br
+    .hero
+      .blink.hide

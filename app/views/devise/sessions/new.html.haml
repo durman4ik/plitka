@@ -1,0 +1,10 @@
+.login-form
+  .login
+    %h1 Вы администратор?
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      %p
+        = f.email_field :email, autofocus: true, placeholder: 'Логин'
+      %p
+        = f.password_field :password, autocomplete: 'off', placeholder: 'Пароль'
+      %p.submit
+        = f.submit 'Войти'

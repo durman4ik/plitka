@@ -1,0 +1,9 @@
+=render 'static/header'
+
+.wrapper
+  .hero-flip
+  .about-info
+    - @services.each do |service|
+      = service.title
+= render 'static/footer'
+

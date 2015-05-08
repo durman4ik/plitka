@@ -1,0 +1,21 @@
+-#.header-m
+-#  .wrapper-m
+-#    =link_to root_path, class: 'logo-m' do
+-#      =image_tag 'logo_22.png'
+-#    .phones
+-#      - @phones.each do |phone|
+-#        %p
+-#          = phone.number
+-#    %nav.navigation
+-#      =render 'static/nav_links'
+#header
+  #header_inner.wrapper
+    =link_to root_path, class: 'logo' do
+      =image_tag 'logo_11.png'
+    #navigation
+      =render 'static/nav_links'
+  - if current_admin
+    .admin-here
+      Здравствуйте, Администратор!
+      =link_to 'Управление', dashboard_path #also change ApplicationController after_sign_in_path
+      =link_to 'Выйти', destroy_admin_session_path, method: :delete, class: 'sign-out-link'

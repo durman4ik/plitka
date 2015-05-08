@@ -1,0 +1,18 @@
+= form_for( :article, url: get_article_url(action_name, @article), method: (:patch if action_name.to_s == 'edit')) do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_area :content
+    - if action_name.to_s == 'edit'
+      = render 'article_attachments/article_attachments'
+
+    = f.fields_for :article_attachments do |a|
+      = f.label 'Выберите изображения к статье:'
+      = f.file_field :image, multiple: true, name: 'article_attachments[image][]'
+  .field
+    = f.label :published
+    = f.check_box :published
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,58 @@
+
+
+
+
+
+
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul,
+ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
+  margin: 0;
+  padding: 0;
+//  border: 0;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+
+img {
+  border: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+a {
+  outline: none;
+}

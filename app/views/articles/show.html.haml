@@ -1,0 +1,30 @@
+=render 'static/header'
+
+.article-main
+  .content-wrapper
+    .images
+      - @images.each do |image|
+        .image
+          = image_tag image, width: '200px', class: 'image'
+    .content
+      %h2.content-title
+        = @article.title
+      .content-body
+        = @article.content
+
+
+-#%p
+-#  %b Title:
+-#  = @article.title
+-#%p
+-#  %b Content:
+-#  = @article.content
+-#%p
+-#  %b Published:
+-#  = @article.published
+-#
+-if current_admin
+  = link_to 'Edit', edit_article_path(@article)
+
+= render 'static/footer'
+

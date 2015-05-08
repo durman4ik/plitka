@@ -1,0 +1,7 @@
+.field.delete-article-image
+  - @article_attachments.each do |article_attachment|
+    = image_tag article_attachment.image, width: '200'
+    = link_to 'Удалить', article_article_attachment_path(article_attachment.article_id, article_attachment),
+                                                                                        method: :delete, remote: true
+
+    %br

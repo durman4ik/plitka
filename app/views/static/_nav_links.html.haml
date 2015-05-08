@@ -1,0 +1,7 @@
+=link_to t('home.portfolio'), albums_path
+=link_to t('home.articles'), articles_path
+=link_to t('home.about'), o_nas_path
+-if I18n.locale == I18n.default_locale
+  =link_to '', params.merge({locale: 'by'}), class: 'flag by'
+-else
+  =link_to '', params.merge({locale: 'ru'}), class: 'flag ru'
