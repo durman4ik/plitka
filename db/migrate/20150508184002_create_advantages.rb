@@ -1,9 +1,8 @@
-class CreateServices < ActiveRecord::Migration
+class CreateAdvantages < ActiveRecord::Migration
   def change
-    create_table :services do |t|
+    create_table :advantages do |t|
       t.string :title_ru
       t.string :title_by
-      t.string :image
 
       t.timestamps null: false
     end

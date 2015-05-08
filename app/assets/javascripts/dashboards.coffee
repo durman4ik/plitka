@@ -1,8 +1,16 @@
-$(document).on('ready page:load', ->
-  current = $('.error-notification')
-  unless current == null
-    window.setTimeout(hide, 3000)
+$(document).on('ready page:load', =>
+  @timeout = setTimeout(hide_notificatioin, 5000)
 )
 
-hide = ->
+$(document).on('mouseover', '.error-notification', =>
+  clearTimeout(@timeout)
+).on('mouseleave  ', '.error-notification', =>
+  @timeout = setTimeout(hide_notificatioin, 5000)
+)
+
+$(document).on('click', '.error-notification', =>
+  $('.error-notification').hide(0)
+)
+
+hide_notificatioin = =>
   $('.error-notification').fadeOut(300)

@@ -18,7 +18,7 @@ body {
     display: none;
   }
 
-  .new-service-form[data-state=showed] {
+  .new-service-form[data-state=showed], .new-advantage-form[data-state=showed] {
     display: block;
     opacity: 1;
 
@@ -55,6 +55,10 @@ body {
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 
   .error-notification[data-state=hidden] {
@@ -70,6 +74,7 @@ body {
 .wrapper {
   width: 1060px;
   margin: 0 auto;
+  height: auto;
 }
 
 .flex {
@@ -79,6 +84,7 @@ body {
 #footer {
   width: 100%;
   padding-top: 30px;
+  padding-bottom: 35px;
   background: url("footer_divider.jpg") no-repeat 0 0;
   height: 1px;
   background-size: 100%;
@@ -106,7 +112,7 @@ body {
       position: relative;
       display: inline-block;
       overflow: hidden;
-      box-shadow: rgba(0, 0, 0, 0.74) 0px 0px 4px;
+      box-shadow: rgba(0, 0, 0, 0.74) 0 0 4px;
 
 
       p {
@@ -211,14 +217,14 @@ section.first {
         color: #B5161E;
         padding-left: 100px;
         padding-top: 80px;
-        text-shadow: 2px 1px 0px rgba(0, 0, 0, 1);
+        text-shadow: 2px 1px 0 rgba(0, 0, 0, 1);
       }
 
       .info {
         text-align: center;
         font-size: 30px;
-        color: black;
-        text-shadow: 2px 1px 0px rgba(102, 102, 102, 0.65);
+        color: #512B1B;;
+        text-shadow: 2px 1px 0 rgba(102, 102, 102, 0.65);
         padding-top: 18px;
       }
     }
@@ -257,9 +263,37 @@ section.first {
   background: url("geroi_flip.png") no-repeat right;
   background-size: 75%;
   float: left;
-  width: 330px;
+  width: 33%;
   height: 420px;
 }
+
+.about-info {
+  color: #512b1b;
+  float: left;
+  list-style: disc;
+  font-size: 21px;
+  padding-left: 90px;
+
+  h3 {
+    font-size: 27px;
+    padding-bottom: 10px;
+  }
+
+  .advantages {
+    padding-left: 30px;
+    padding-top: 15px;
+    font-size: 21px;
+  }
+
+  .advantages li {
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+  }
+}
+
+
 
 // Headers.
 .header-m, #header {
@@ -279,7 +313,7 @@ section.first {
 
   a.flag {
     border-bottom: none;
-    padding: 0px 12px 0px 14px;
+    padding: 0 12px 0 14px;
     background-size: 85%;
     margin-left: 15px;
 
@@ -418,11 +452,10 @@ section.first {
     text-decoration: underline;
   }
 
-  .new-service-form[data-state=hidden] {
+  .new-service-form[data-state=hidden], .new-advantage-form[data-state=hidden] {
 
     .form {
       opacity: 0;
-
       -webkit-transition: opacity 0.3s ease;
       -moz-transition: opacity 0.3s ease;
       -o-transition: opacity 0.3s ease;
@@ -430,18 +463,18 @@ section.first {
     }
   }
 
-  .new-service-form .head, .blocks .block .head {
+  .new-service-form .head, .new-advantage-form .head, .blocks .block .head {
     height: 30px;
     padding: 10px;
     background-color: #9D0F0F;
-    box-shadow: 0px 1px 5px black;
-    -webkit-box-shadow: 0px 1px 5px black;
-    -moz-box-shadow: 0px 1px 5px black;
-    -o-box-shadow: 0px 1px 5px black;
+    box-shadow: 0 1px 5px black;
+    -webkit-box-shadow: 0 1px 5px black;
+    -moz-box-shadow: 0 1px 5px black;
+    -o-box-shadow: 0 1px 5px black;
     color: white;
   }
 
-  .new-service-form {
+  .new-service-form, .new-advantage-form {
 
     width: 100%;
     display: none;
@@ -463,10 +496,10 @@ section.first {
       text-shadow: 1px 1px 1px black;
       display: block;
       margin: 50px auto 0;
-      box-shadow: 0px 0px 10px black;
-      -webkit-box-shadow: 0px 0px 10px black;
-      -moz-box-shadow: 0px 0px 10px black;
-      -o-box-shadow: 0px 0px 10px black;
+      box-shadow: 0 0 10px black;
+      -webkit-box-shadow: 0 0 10px black;
+      -moz-box-shadow: 0 0 10px black;
+      -o-box-shadow: 0 0 10px black;
 
 
       .btn {
@@ -492,7 +525,7 @@ section.first {
       .close-link {
         position: absolute;
         top: 0;
-        right: 0px;
+        right: 0;
         cursor: pointer;
 
         img {
@@ -515,21 +548,26 @@ section.first {
         border-left: 0.3rem solid #fff;
         display: block;
       }
+
+      input.image {
+        color: white;
+      }
+
     }
   }
 
-  .services, .phones {
+  .services, .phones, .advantages {
 
     .info {
       padding-right: 27px !important;
     }
 
-    .service {
+    .service, .advantage {
       height: 20px;
       width: 89%;
     }
 
-    .services-list {
+    .services-list, .advantages-list {
       text-transform: none;
       list-style: square outside;
       font-size: 15px;
@@ -567,7 +605,7 @@ section.first {
       position: relative;
 
       li{
-        margin: 0px 10px 0px 30px;
+        margin: 0 10px 0 30px;
       }
     }
 
@@ -612,7 +650,8 @@ section.first {
     .menu-links {
 
       width: 100%;
-      height: 60%;
+      height: auto;
+      padding-top: 50px;
 
       display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
       display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -652,6 +691,11 @@ section.first {
       }
 
       a:hover {
+        border: none;
+        background-color: #e5412d;
+      }
+
+      .current {
         border: none;
         background-color: #e5412d;
       }
@@ -785,7 +829,7 @@ section.first {
         position: relative;
         text-transform: none;
         color: rgba(74, 74, 74, 1);
-        text-shadow: #7c7c7c 0px 0px 0px;
+        text-shadow: #7c7c7c 0 0 0;
 
         span {
           position: relative;
@@ -809,7 +853,7 @@ section.first {
 
       &:hover {
         background: rgba(50, 50, 50, 0.23);
-        box-shadow: #000000 0px 1px 6px;
+        box-shadow: #000000 0 1px 6px;
 
         .title {
           text-shadow: white 1px 1px 2px;
@@ -834,12 +878,21 @@ section.first {
 }
 
 
+// ABOUT.
 
+.about-first {
+  height: 425px;
+  width: 100%;
+  background: url("footer_divider.jpg") no-repeat 100% 100%;
+  background-size: 100%;
+  position: relative;
+  clear: both;
+}
 
-
-
-
-
-
-
+.about-second {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  clear: both;
+}
 

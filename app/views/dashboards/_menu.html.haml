@@ -3,10 +3,10 @@
     Здравствуйте, Администратор!
     -#= "#{current_admin.name}!"
   .menu-links
-    = link_to 'Основная', dashboard_path
-    = link_to 'Портфолио', dashboard_portfolio_path
-    = link_to 'Информация о себе'
-    = link_to 'Статьи'
+    = link_to 'Основная', dashboard_path, class: "#{'current' if action_name == 'index'}"
+    = link_to 'Портфолио', dashboard_portfolio_path, class: "#{'current' if action_name == 'portfolio'}"
+    = link_to 'Информация о себе' #, class: "#{'current' if action_name == 'about'}"
+    = link_to 'Статьи', '', class: "#{'current' if action_name == 'articles'}"
   .exit-link
     = link_to root_path, class: 'button green' do
       = image_tag 'left.png', width: '20px'

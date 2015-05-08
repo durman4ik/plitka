@@ -1,6 +1,5 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:destroy]
-  # before_action :clear_flash
 
   def create
     @service = Service.new(service_params)
@@ -10,7 +9,7 @@ class ServicesController < ApplicationController
         flash[:notice] = 'Услуга успешно создана!'
         format.html { redirect_to dashboard_path }
       else
-        flash[:error] = 'Ошибка! Не удалось создать услугу!'
+        flash[:error] = "Ошибка! Не удалось создать услугу!\n" + "#{@service.errors.values.join("\n")}"
         format.html { redirect_to dashboard_path }
       end
     end
@@ -33,10 +32,6 @@ class ServicesController < ApplicationController
   end
 
   private
-
-    def clear_flash
-      flash.clear
-    end
 
     def set_service
       @service = Service.find(params[:id])

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+
+
   get '', to: redirect("/#{I18n.locale}")
 
   scope "/:locale/", locale: /ru|by/ do
@@ -9,9 +11,7 @@ Rails.application.routes.draw do
     root 'home#index'
 
     get 'o_nas'               => 'home#o_nas'
-    get 'my_portfolio'           => 'dashboards#portfolio', as: :dashboard_portfolio
-    # get 'interesnoe'          => 'dashboards#albums', as: :dashboards_albums
-    # get 'interesnoe'          => 'dashboards#articles', as: :dashboards_articles
+    get 'my_portfolio'        => 'dashboards#portfolio', as: :dashboard_portfolio
 
     devise_for :admins, :skip => [:sessions]
     as :admin do
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resource :dashboards do
       resources :phones, only: [:create, :destroy]
       resources :services, only: [:create, :destroy]
+      resources :advantages, only: [:create, :destroy]
     end
 
     resources :articles do

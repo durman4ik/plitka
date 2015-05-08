@@ -5,10 +5,14 @@ $(document).on('click', '.remove', ->
   )
 )
 
-$(document).on('click', '.link-add', ->
+$(document).on('click', '.service-add', ->
   $('.new-service-form').attr('data-state', 'showed')
 )
 
+$(document).on('click', '.advantage-add', ->
+  $('.new-advantage-form').attr('data-state', 'showed')
+)
+
 $(document).on('click', '.close-link', ->
-  $('.new-service-form').attr('data-state', 'hidden')
+  $('.new-service-form, .new-advantage-form').attr('data-state', 'hidden')
 )

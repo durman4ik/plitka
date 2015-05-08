@@ -1,0 +1,10 @@
+- @advantages.each do |advantage|
+  .line
+    %li.advantage
+      - if I18n.locale == 'ru'
+        = advantage.title_ru
+      - else
+        = advantage.title_by
+      = link_to dashboards_advantage_path(advantage), method: :delete, remote: true, class: 'remove',
+      :data => { :confirm => 'Вы уверены?' } do
+        = image_tag 'remove.png'

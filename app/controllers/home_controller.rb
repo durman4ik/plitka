@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def o_nas
     @services = Service.all
+    @advantages = Advantage.all
   end
 
   def portfolio
