@@ -6,16 +6,29 @@
       .hero-flip
       .about-info
         %h3.animated.bounceInRight
-          = 'Нас выбирают благодаря:'
+          = t('about.they_choise_us')
         .advantages
           - @advantages.each_with_index do |advantage, index|
             %li{class: "fade-in service-#{index.to_s}"}
-              - if I18n.locale.to_s == 'ru'
+              - if I18n.locale.to_s == 'ru' || advantage.title_by.blank?
                 = advantage.title_ru
               - else
                 = advantage.title_by
             %br
   .about-second
-    .wrapper
+    .wrapper.wrapper-about
+      .services
+        %h1.service-title
+          = t('about.we_can')
+        .services-list
+          - @services.each_with_index do |service, index|
+            .service{class: "#{get_class_position(index)}" }
+              .service-image
+                = image_tag service.image.url(:thumb)
+              .title
+                - if I18n.locale.to_s == 'ru' || service.title_by.blank?
+                  = service.title_ru
+                - else
+                  = service.title_by
 = render 'static/footer'
 

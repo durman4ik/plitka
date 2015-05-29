@@ -6,7 +6,7 @@
 .fade-in {
   opacity:0;
   -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fafeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
   -o-animation:fadeIn ease-in 1;
   animation:fadeIn ease-in 1;
 
@@ -21,88 +21,95 @@
   animation-duration:.3s;
 }
 
-.fade-in.service-1 {
-  -webkit-animation-delay: 0.2s;
-  -moz-animation-delay: 0.2s;
-  -o-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-
-.fade-in.service-2 {
-  -webkit-animation-delay: 0.4s;
-  -moz-animation-delay:0.4s;
-  -o-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.fade-in.service-3 {
+.fade-in.service-0 {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   -o-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 
-.fade-in.service-4 {
+.fade-in.service-1 {
   -webkit-animation-delay: 0.8s;
   -moz-animation-delay: 0.8s;
   -o-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
 
-.fade-in.service-5 {
+.fade-in.service-2 {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   -o-animation-delay: 1s;
   animation-delay: 1s;
 }
 
-.fade-in.service-6 {
+.fade-in.service-3 {
   -webkit-animation-delay: 1.2s;
   -moz-animation-delay: 1.2s;
   -o-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
 
-.fade-in.service-7 {
+.fade-in.service-4 {
   -webkit-animation-delay: 1.4s;
   -moz-animation-delay: 1.4s;
   -o-animation-delay: 1.4s;
   animation-delay: 1.4s;
 }
 
-.fade-in.service-8 {
+.fade-in.service-5 {
   -webkit-animation-delay: 1.6s;
   -moz-animation-delay: 1.6s;
   -o-animation-delay: 1.6s;
   animation-delay: 1.6s;
 }
 
-.fade-in.service-9 {
+.fade-in.service-6 {
   -webkit-animation-delay: 1.8s;
   -moz-animation-delay: 1.8s;
   -o-animation-delay: 1.8s;
   animation-delay: 1.8s;
 }
 
-.fade-in.service-10 {
+.fade-in.service-7 {
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s;
   -o-animation-delay: 2s;
   animation-delay: 2s;
 }
 
-.fade-in.service-11 {
+.fade-in.service-8 {
   -webkit-animation-delay: 2.2s;
   -moz-animation-delay: 2.2s;
   -o-animation-delay: 2.2s;
   animation-delay: 2.2s;
 }
 
-.fade-in.service-12 {
+.fade-in.service-9 {
   -webkit-animation-delay: 2.4s;
   -moz-animation-delay: 2.4s;
   -o-animation-delay: 2.4s;
   animation-delay: 2.4s;
+}
+
+.fade-in.service-10 {
+  -webkit-animation-delay: 2.6s;
+  -moz-animation-delay: 2.6s;
+  -o-animation-delay: 2.6s;
+  animation-delay: 2.6s;
+}
+
+.fade-in.service-11 {
+  -webkit-animation-delay: 2.8s;
+  -moz-animation-delay: 2.8s;
+  -o-animation-delay: 2.8s;
+  animation-delay: 2.8s;
+}
+
+.fade-in.service-12 {
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  -o-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 

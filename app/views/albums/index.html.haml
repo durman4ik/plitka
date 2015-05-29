@@ -6,7 +6,10 @@
         = link_to album_path(album) do
           .album
             .title
-              = album.title
+              - if I18n.locale.to_s == 'ru' || album.title_by.blank?
+                = album.title_ru
+              - else
+                = album.title_by
             %br
             .image-counter
               %span

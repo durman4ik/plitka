@@ -34,6 +34,7 @@
         = form_for :service, url: dashboards_services_path do |f|
           = f.text_field :title_ru, placeholder: 'Название на русском'
           = f.text_field :title_by, placeholder: 'Название на беларусском'
+          = f.file_field :image, prompt: 'Выберите изображение', class: 'image'
           = f.submit 'Save', class: 'btn'
     // Advantages form.
     .new-advantage-form{data: {state: 'hidden'}}
@@ -45,7 +46,6 @@
         = form_for :advantage, url: dashboards_advantages_path do |f|
           = f.text_field :title_ru, placeholder: 'Название на русском'
           = f.text_field :title_by, placeholder: 'Название на беларусском'
-          = f.file_field :image, prompt: 'Выберите изображение', class: 'image'
           = f.submit 'Save', class: 'btn'
     .notifications
       = render 'static/error'

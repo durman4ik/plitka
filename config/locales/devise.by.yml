@@ -1,0 +1,4 @@
+by:
+  devise:
+    sessions:
+      signed_in: "Добры дзень, Адміністратар!"

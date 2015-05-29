@@ -8,7 +8,17 @@
     = link_to 'Информация о себе' #, class: "#{'current' if action_name == 'about'}"
     = link_to 'Статьи', '', class: "#{'current' if action_name == 'articles'}"
   .exit-link
-    = link_to root_path, class: 'button green' do
+    - if params[:action].to_s == 'portfolio'
+      = link_to new_album_path, class: 'button new-album green' do
+        = image_tag 'add.png', width: '20px'
+        %span Создать альбом
+
+    - if show_back_link(params)
+      = link_to :back, class: 'button gray back' do
+        = image_tag 'left.png', width: '20px'
+        %span Назад
+
+    = link_to root_path, class: 'button yellow' do
       = image_tag 'left.png', width: '20px'
       %span К сайту
     %br

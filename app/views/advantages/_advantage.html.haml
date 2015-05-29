@@ -1,7 +1,7 @@
 - @advantages.each do |advantage|
   .line
     %li.advantage
-      - if I18n.locale == 'ru'
+      - if I18n.locale.to_s == 'ru' || advantage.title_by.blank?
         = advantage.title_ru
       - else
         = advantage.title_by

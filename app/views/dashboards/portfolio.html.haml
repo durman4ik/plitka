@@ -1,9 +1,7 @@
 .dashboard
   = render 'dashboards/menu'
-  .albums
-    - @albums.each do |album|
-      .left
-        = album.title
-        %br
-        = image_tag album.images.first.url.url, width: '150px'
-        %br
+  .dashboard-albums
+    .services-list
+      = render 'albums/albums'
+  .notifications
+    = render 'static/error'

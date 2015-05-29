@@ -37,6 +37,6 @@ class AdvantagesController < ApplicationController
     end
 
     def advantage_params
-      params.require(:advantage).permit(:title_ru, :title_by, :image)
+      params.require(:advantage).permit(:title_ru, :title_by)
     end
 end

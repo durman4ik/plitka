@@ -4,7 +4,7 @@ module AlbumsHelper
     if action == 'new'
       albums_path
     else
-      albums_path(album)
+      album_path(album)
     end
   end
 end

@@ -29,13 +29,13 @@ ActiveRecord::Schema.define(version: 20150508184002) do
   create_table "advantages", force: :cascade do |t|
     t.string   "title_ru",   limit: 255
     t.string   "title_by",   limit: 255
-    t.string   "image",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "albums", force: :cascade do |t|
-    t.string   "title",       limit: 255
+    t.string   "title_ru",    limit: 255
+    t.string   "title_by",    limit: 255
     t.string   "description", limit: 255
     t.string   "head_image",  limit: 255
     t.datetime "created_at",              null: false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150508184002) do
   create_table "services", force: :cascade do |t|
     t.string   "title_ru",   limit: 255
     t.string   "title_by",   limit: 255
+    t.string   "image",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

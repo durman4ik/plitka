@@ -1,12 +1,12 @@
 = form_for :album, url: get_album_url(action_name, @album), method: (:patch if action_name.to_s == 'edit') do |f|
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.label 'Название на русском'
+    = f.text_field :title_ru
   .field
-    = f.label :description
-    = f.text_area :description
-    -#- if action_name.to_s == 'edit'
-    -#  = render 'article_attachments/article_attachments'
+    = f.label 'Название на беларусском'
+    = f.text_field :title_by
+    - if action_name.to_s == 'edit'
+      = render 'images/images'
 
     = f.fields_for :images do |a|
       .field

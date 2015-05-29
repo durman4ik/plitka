@@ -7,7 +7,6 @@ class AlbumsController < ApplicationController
 
   def show
     @images = @album.images.all
-
   end
 
   def new
@@ -16,6 +15,7 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    @images = @album.images.all
   end
 
   def create
@@ -23,11 +23,11 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       if @album.save_album(params)
-        format.html { redirect_to albums_path, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
+        flash[:notice] = 'Альбом успешно создан!'
+        format.html { redirect_to dashboard_portfolio_path }
       else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        flash[:error] = "Ошибка! Не удалось создать альбом!\n" + "#{@album.errors.values.join("\n")}"
+        format.html { redirect_to dashboard_portfolio_path }
       end
     end
   end
@@ -45,10 +45,19 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    @albums = Album.all
+
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
-      format.json { head :no_content }
+      if @album.destroy
+        flash[:notice] = 'Альбом успешно удален!'
+        format.html { redirect_to albums_path  }
+        format.js   { render 'albums/destroy' }
+      else
+        flash[:notice] = 'Ошибка! Не удалось удалить альбом!'
+        format.html { redirect_to albums_path }
+        format.js   { render 'static/errors' }
+      end
     end
   end
 
@@ -58,7 +67,7 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :description,
+      params.require(:album).permit(:description, :title_ru, :title_by,
                                      images_attributes: [:id, :album_id, :title, :description, :url])
     end
 end
