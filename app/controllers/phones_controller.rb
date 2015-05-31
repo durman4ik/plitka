@@ -1,6 +1,7 @@
 class PhonesController < ApplicationController
 
   before_action :set_phone, only: [:destroy]
+  before_action :authenticate_admin!
 
   def create
     @phone = Phone.new(phone_params)

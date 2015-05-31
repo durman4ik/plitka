@@ -1,4 +1,7 @@
 .dashboard
   = render 'dashboards/menu'
-  .dashboard-wrapper
-    = render 'form'
+  .dashboard-main-wrapper
+    .blocks
+      = render 'edit_form'
+.notifications
+  = render 'static/error'

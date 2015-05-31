@@ -1,5 +1,24 @@
 = render 'static/header'
 .wrapper
-  - @album.images.each do |image|
-    = image_tag image.url.url, width: '200px'
+  - if @album.images.blank? == false
+    .connected-carousels
+      .navigation
+        .carousel.carousel-navigation
+          %ul
+            - @album.images.each_with_index do |image, index|
+              %li{class: "fade-in item-#{index}"}
+                = image_tag image.url.url(:thumb), width: '100px', height: '100px'
+      .stage.fade-in.item-4
+        .carousel.carousel-stage
+          %ul
+            - @album.images.each do |image|
+              %li
+                = image_tag image.url.url, width: '800px'
+        %a.prev.prev-stage{:href => "#"}
+          %span ‹
+        %a.next.next-stage{:href => "#"}
+          %span ›
+  - else
+    = 'В этом альбоме пока нет фотографий'
+
 = render 'static/footer'

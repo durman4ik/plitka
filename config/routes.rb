@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
 
-
-
-
-
   get '', to: redirect("/#{I18n.locale}")
 
   scope "/:locale/", locale: /ru|by/ do
 
     root 'home#index'
+    get 'o_nas'                   => 'home#o_nas'
+    get 'dashboard/my_portfolio'  => 'dashboards#portfolio', as: :dashboard_portfolio
+    get 'dashboard/articles'      => 'dashboards#articles', as: :dashboard_articles
 
-    get 'o_nas'               => 'home#o_nas'
-    get 'my_portfolio'        => 'dashboards#portfolio', as: :dashboard_portfolio
 
     devise_for :admins, :skip => [:sessions]
     as :admin do
@@ -33,7 +30,7 @@ Rails.application.routes.draw do
 
 
     resources :albums, path: 'portfolio' do
-      resources :images
+      resources :images, only: [:create, :destroy]
     end
   end
 

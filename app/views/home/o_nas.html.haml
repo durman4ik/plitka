@@ -3,13 +3,13 @@
 %section
   .about-first
     .wrapper
-      .hero-flip
+      .hero-flip.animated.bounceInLeft
       .about-info
         %h3.animated.bounceInRight
           = t('about.they_choise_us')
         .advantages
           - @advantages.each_with_index do |advantage, index|
-            %li{class: "fade-in service-#{index.to_s}"}
+            %li{class: "fade-in item-#{index + 2}"}
               - if I18n.locale.to_s == 'ru' || advantage.title_by.blank?
                 = advantage.title_ru
               - else
@@ -22,7 +22,7 @@
           = t('about.we_can')
         .services-list
           - @services.each_with_index do |service, index|
-            .service{class: "#{get_class_position(index)}" }
+            .service{class: "animated #{get_class_position(index)}" }
               .service-image
                 = image_tag service.image.url(:thumb)
               .title

@@ -1,0 +1,30 @@
+.input-form
+  %h1
+    = 'Редактирование альбома'
+  .head-image
+    %p.cover-label
+      = 'Обложка альбома:'
+    = image_tag @album.head_image.url(:thumb)
+  = form_for :album, url: get_album_url(action_name, @album), method: (:patch if action_name.to_s == 'edit') do |f|
+    .edit-field
+      = f.label 'Название на русском'
+      = f.text_field :title_ru, placeholder: 'Название на русском', required: true
+    .edit-field
+      = f.label 'Название на белорусском'
+      = f.text_field :title_by, placeholder: 'Название на беларусском'
+    .cover
+      = f.file_field :head_image, accept: 'image/png,image/gif,image/jpeg', require: @album.head_image.nil?
+    .edit-field
+      = f.fields_for :images do |a|
+        = f.label 'Выберите изображения для альбома:'
+        = f.file_field :url, multiple: true, name: 'images_attributes[image][]', accept: 'image/png,image/gif,image/jpeg'
+    .edit-actions
+      = f.submit 'Сохранить'
+  .jcarousel-wrapper
+    .jcarousel
+      %ul
+        - @album.images.each do |image|
+          %li
+            = image_tag image.url.url(:thumb), width: '150px', height: '150px'
+    %a.jcarousel-control-prev{:href => "#"} ‹
+    %a.jcarousel-control-next{:href => "#"} ›

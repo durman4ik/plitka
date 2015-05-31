@@ -1,6 +1,6 @@
 class AdvantagesController < ApplicationController
   before_action :set_advantage, only: [:destroy]
-
+  before_action :authenticate_admin!
   def create
     @advantage = Advantage.new(advantage_params)
 

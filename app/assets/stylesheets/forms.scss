@@ -1,0 +1,136 @@
+.input-form{
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  font: 95% Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  background: #F7F7F7;
+
+  form {
+    width: 50%;
+    margin: 50px auto;
+
+    .field {
+      position: relative;
+    }
+  }
+
+  .head-image {
+    position: absolute;
+    left: 70px;
+    top: 125px;
+
+    p.cover-label {
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+  }
+
+  .cover {
+    position: absolute;
+    left: 70px;
+    top: 290px;
+  }
+}
+
+.input-form h1{
+  background: #393939;
+  font-size: 140%;
+  font-weight: bold;
+  width: 98%;
+  padding: 20px 2% 20px 0;
+  text-align: right;
+  color: #fff;
+
+  box-shadow: 0px 2px 7px black;
+  -webkit-box-shadow: 0px 2px 7px black;
+  -moz-box-shadow: 0px 2px 7px black;
+  -o-box-shadow: 0px 2px 7px black;
+}
+.input-form .field input[type="text"],
+.input-form .field input[type="date"],
+.input-form .field input[type="datetime"],
+.input-form .field input[type="email"],
+.input-form .field input[type="number"],
+.input-form .field input[type="search"],
+.input-form .field input[type="time"],
+.input-form .field input[type="url"],
+.input-form .field input[type="file"],
+.input-form .field textarea,
+.input-form .field select,
+.input-form .edit-field input[type="text"],
+.input-form .edit-field input[type="date"],
+.input-form .edit-field input[type="datetime"],
+.input-form .edit-field input[type="email"],
+.input-form .edit-field input[type="number"],
+.input-form .edit-field input[type="search"],
+.input-form .edit-field input[type="time"],
+.input-form .edit-field input[type="url"],
+.input-form .edit-field input[type="file"],
+.input-form .edit-field textarea,
+.input-form .edit-field select
+{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 7px;
+  margin: 10px 0;
+  color: #555;
+  font: 95% Arial, Helvetica, sans-serif;
+}
+.input-form .field input[type="text"]:focus,
+.input-form .field input[type="date"]:focus,
+.input-form .field input[type="datetime"]:focus,
+.input-form .field input[type="email"]:focus,
+.input-form .field input[type="number"]:focus,
+.input-form .field input[type="search"]:focus,
+.input-form .field input[type="time"]:focus,
+.input-form .field input[type="url"]:focus,
+.input-form .field textarea:focus,
+.input-form .field select:focus,
+.input-form .edit-field input[type="text"],
+.input-form .edit-field input[type="date"],
+.input-form .edit-field input[type="datetime"],
+.input-form .edit-field input[type="email"],
+.input-form .edit-field input[type="number"],
+.input-form .edit-field input[type="search"],
+.input-form .edit-field input[type="time"],
+.input-form .edit-field input[type="url"],
+.input-form .edit-field input[type="file"],
+.input-form .edit-field textarea,
+.input-form .edit-field select
+{
+  box-shadow: 0 0 5px #4EA52B;
+  padding: 8px;
+  border: 1px solid #43D1AF;
+}
+
+.input-form input[type="submit"],
+.input-form input[type="button"]{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  font-size: 110%;
+  cursor: pointer;
+  background: #499d4d;;
+  border-bottom: 4px solid #428342;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+}
+.input-form input[type="submit"]:hover,
+.input-form input[type="button"]:hover{
+  background: #428342;
+}

@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :destroy, :edit, :update]
 
   def index
     @albums = Album.all
@@ -16,13 +17,14 @@ class AlbumsController < ApplicationController
 
   def edit
     @images = @album.images.all
+    @image = @album.images.build
   end
 
   def create
     @album = Album.new(album_params)
 
     respond_to do |format|
-      if @album.save_album(params)
+      if @album.save_album(album_params, params)
         flash[:notice] = 'Альбом успешно создан!'
         format.html { redirect_to dashboard_portfolio_path }
       else
@@ -34,18 +36,22 @@ class AlbumsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @album.save_album(params)
-        format.html { redirect_to albums_path, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
+      if @album.update_album(album_params, params)
+        flash[:notice] = 'Изменения сохранены!'
+        format.html { redirect_to dashboard_portfolio_path }
       else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        if @album.errors.blank?
+          flash[:error] =  'Изменения сохранены!'
+        else
+          flash[:error] = "Ошибка! Не удалось изменить альбом!\n" + "#{@album.errors.values.join("\n")}"
+        end
+        format.html { redirect_to dashboard_portfolio_path }
       end
     end
   end
 
   def destroy
-    @albums = Album.all
+    @albums = Album.all.includes(:images)
 
     @album.destroy
     respond_to do |format|
@@ -67,7 +73,7 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:description, :title_ru, :title_by,
-                                     images_attributes: [:id, :album_id, :title, :description, :url])
+      params.require(:album).permit(:description, :title_ru, :title_by, :head_image,
+                                    images_attributes: [:id, :album_id, :title, :description, :url])
     end
 end

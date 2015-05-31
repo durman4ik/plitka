@@ -50,11 +50,13 @@ ActiveRecord::Schema.define(version: 20150508184002) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "content",    limit: 65535
-    t.boolean  "published",  limit: 1
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title_ru",     limit: 255
+    t.string   "title_by",     limit: 255
+    t.text     "content_ru",   limit: 65535
+    t.text     "content_by",   limit: 65535
+    t.boolean  "is_published", limit: 1
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "images", force: :cascade do |t|

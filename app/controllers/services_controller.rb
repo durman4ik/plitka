@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:destroy]
+  before_action :authenticate_admin!
 
   def create
     @service = Service.new(service_params)

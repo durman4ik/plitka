@@ -1,19 +1,22 @@
 - if @albums.blank?
   .has_no
     = 'У нас пока нет ни одного альбома. Создайте!'
-- @albums.each do |album|
-  .service
-    = link_to album, class: 'service-link' do
-      .some
-        .service-image
-          = image_tag album.images.first.url.url(:thumb)
-        .title
-          - if I18n.locale.to_s == 'ru' || album.title_by.blank?
-            = album.title_ru
-          - else
-            = album.title_by
-    = link_to album_path(album), class: 'remove remove-album', remote: true, method: :delete,
-      data: { confirm: 'Вы уверены?' } do
-      = image_tag 'remove.png', alt: 'Удалить альбом'
-    = link_to edit_album_path(album), class: 'remove edit-album' do
-      = image_tag 'edit.png', alt: 'Удалить альбом'
+- else
+  - @albums.each do |album|
+    .service
+      .service-image
+        = image_tag album.head_image.url(:thumb)
+      .title
+        - if I18n.locale.to_s == 'ru' || album.title_by.blank?
+          = album.title_ru
+        - else
+          = album.title_by
+      .image-counter
+        = 'Фотографий в альбоме: '
+        = album.images.to_a.length
+      - if current_admin
+        = link_to album_path(album), class: 'remove remove-album', remote: true, method: :delete,
+          data: { confirm: 'Вы уверены?' } do
+          = image_tag 'remove.png', alt: 'Удалить альбом'
+        = link_to edit_album_path(album), class: 'remove edit-album' do
+          = image_tag 'edit.png', alt: 'Удалить альбом'

@@ -5,8 +5,7 @@
   .menu-links
     = link_to 'Основная', dashboard_path, class: "#{'current' if action_name == 'index'}"
     = link_to 'Портфолио', dashboard_portfolio_path, class: "#{'current' if action_name == 'portfolio'}"
-    = link_to 'Информация о себе' #, class: "#{'current' if action_name == 'about'}"
-    = link_to 'Статьи', '', class: "#{'current' if action_name == 'articles'}"
+    = link_to 'Статьи', dashboard_articles_path, class: "#{'current' if action_name == 'articles'}"
   .exit-link
     - if params[:action].to_s == 'portfolio'
       = link_to new_album_path, class: 'button new-album green' do

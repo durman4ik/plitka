@@ -1,42 +1,17 @@
 =render 'static/header'
-.articles-wrapper
-  %ul.articles.wrapper
-    - @articles.each do |article|
-      %li.article
-        .article-title
-          %p
-            = article.title
-        .article-thumb
-        -#= image_tag article.url
-        .article-details
-          = link_to 'Читать дальше..', article_path(article), class: 'details-link'
+.articles-base
+  %h2.yield.animated.bounceInLeft
+    = 'Статьи'
+  .wrapper.flex
+    .articles.animated.bounceInUp
+      .articles-list
+        - @articles.each_with_index do |article, index|
+          .article
+            .article-title
+              %p
+                = article.title
+            .article-thumb
+            -#= image_tag article.url
+            .article-details
+              = link_to 'Читать дальше..', article_path(article), class: 'details-link animation'
 = render 'static/footer'
-
-
--#.dashboard
--#  = render 'dashboards/menu'
-
-  -#.container
-  -#  %table
-  -#    %thead
-  -#      %tr
-  -#        %th Заголовок
-  -#        %th Опубликована?
-  -#        %th
-  -#        %th
-  -#        %th
-  -#    %tbody
-  -#      - @articles.each do |article|
-  -#        %tr
-  -#          %td= article.title
-  -#          %td
-  -#            - if article.published
-  -#              = link_to 'Снять с публикации'
-  -#            - else
-  -#              = link_to 'Опубликовать'
-  -#          %td= link_to 'Show', dashboards_article_path(article)
-  -#          %td= link_to 'Edit', edit_dashboards_article_path(article)
-  -#          %td= link_to 'Destroy', dashboards_article_path(article), :method => :delete, :data => { :confirm => 'Are you sure?' }
-  -#
-  -#  %br
-  -#= link_to 'Создать', new_dashboards_article_path

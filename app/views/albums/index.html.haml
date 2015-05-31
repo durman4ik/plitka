@@ -1,34 +1,17 @@
 = render 'static/header'
 .portfolio
+  %h2.yield.animated.bounceInLeft
+    = 'Портфолио'
   .wrapper.flex
-    .albums
-      - @albums.each do |album|
-        = link_to album_path(album) do
+    .albums.animated.bounceInUp
+      - @albums.each_with_index do |album, index|
+        = link_to album_path(album), class: 'animation', data: { no_turbolink: true } do
           .album
+            .head-image
+              = image_tag (album.head_image.url(:medium) || Album::DEFAULT_IMAGE)
             .title
               - if I18n.locale.to_s == 'ru' || album.title_by.blank?
                 = album.title_ru
               - else
                 = album.title_by
-            %br
-            .image-counter
-              %span
-                = 'Изображений в альбоме:'
-                = album.images.length
-            .details
-              = 'Просмотреть..'
-
-            -#.image
-            -#  = image_tag (album.images.first.url.url || Album::DEFAULT_IMAGE), width: '150px'
 = render 'static/footer'
-
-
--#.dashboard
--#  = render 'dashboards/menu'
--#  .dashboard-main-wrapper
--#    - @albums.each do |album|
--#      = link_to dashboards_album_path(album) do
--#        = album.title
--#        %br
--#        = image_tag((album.head_image || Album::DEFAULT_IMAGE), width: '150px')
--#    = link_to 'Создать альбом', new_dashboards_album_path
