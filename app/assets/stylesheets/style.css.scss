@@ -5,11 +5,11 @@ body {
 }
 
 body.body {
-  background: #e2ddd7 url('paper_bg.jpg') repeat;
+  background: #e2ddd7 url(asset-path('paper_bg.jpg')) repeat;
 }
 
 #header {
-  background: url('header_bg.jpg') no-repeat top center;
+  background: url(asset-path('header_bg.jpg')) no-repeat top center;
   width: 100%;
   padding-bottom: 25px;
 }
@@ -35,7 +35,7 @@ body.body {
 /* Header */
 
 h1.logo, a.logo {
-  background: url("logo_11.png") no-repeat;
+  background: url(asset-path("logo_11.png")) no-repeat;
   display: block;
   height: 100px;
   left: 10px;

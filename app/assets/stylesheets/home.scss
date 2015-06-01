@@ -56,7 +56,7 @@ body {
   width: 100%;
   padding-top: 30px;
   padding-bottom: 35px;
-  background: url("footer_divider.jpg") no-repeat 0 0;
+  background: url(asset-path("footer_divider.jpg")) no-repeat 0 0;
   height: 1px;
   background-size: 100%;
   text-align: center;
@@ -104,7 +104,7 @@ section.first {
 }
 
 .hero {
-  background: url("geroi_11.png") no-repeat center bottom;
+  background: url(asset-path("geroi_11.png")) no-repeat center bottom;
   background-size: 75%;
   float: left;
   width: 330px;
@@ -132,7 +132,7 @@ section.first {
 
 .hero-flip {
 
-  background: url("geroi_flip.png") no-repeat right;
+  background: url(asset-path("geroi_flip.png")) no-repeat right;
   background-size: 75%;
   float: left;
   width: 33%;
@@ -196,11 +196,11 @@ section.first {
   }
 
   .ru {
-    background: url("Russia-little.gif") no-repeat;
+    background: url(asset-path("Russia-little.gif")) no-repeat;
   }
 
   .by {
-    background: url("bel.gif") no-repeat;
+    background: url(asset-path("bel.gif")) no-repeat;
   }
 
   a:hover {
@@ -470,7 +470,7 @@ section.first {
 .about-first {
   height: 425px;
   width: 100%;
-  background: url("footer_divider.jpg") no-repeat 100% 100%;
+  background: url(asset-path("footer_divider.jpg")) no-repeat 100% 100%;
   background-size: 100%;
   position: relative;
   clear: both;
@@ -494,7 +494,7 @@ section.first {
       text-align: center;
       padding: 25px;
 
-      background: url("title_bg.jpg") no-repeat top center;
+      background: url(asset-path("title_bg.jpg")) no-repeat top center;
       background-size: 60%;
     }
     .services-list {
