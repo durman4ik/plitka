@@ -1,29 +1,19 @@
 =render 'static/header'
+.articles-base
+  .wrapper
+    .articles.animated.bounceInUp
+      .content
+        %h2.content-title
+          - if I18n.locale.to_s == 'ru' || !@article.title_by.present?
+            = @article.title_ru
+          - else
+            = @article.title_by
+        .content-body
+          - if I18n.locale.to_s == 'ru' || !@article.content_by.present?
+            = raw (@article.content_ru)
+          - else
+            = raw (@article.content_by)
 
-.wrapper
-  .images
-    - @images.each do |image|
-      .image
-        = image_tag image, width: '200px', class: 'image'
-  .content
-    %h2.content-title
-      = @article.title
-    .content-body
-      = @article.content
-
-
--#%p
--#  %b Title:
--#  = @article.title
--#%p
--#  %b Content:
--#  = @article.content
--#%p
--#  %b Published:
--#  = @article.published
--#
--if current_admin
-  = link_to 'Edit', edit_article_path(@article)
 
 = render 'static/footer'
 

@@ -1,18 +1,28 @@
-= form_for( :article, url: get_article_url(action_name, @article), method: (:patch if action_name.to_s == 'edit')) do |f|
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :content
-    = f.text_area :content
-    - if action_name.to_s == 'edit'
-      = render 'article_attachments/article_attachments'
-
-    = f.fields_for :article_attachments do |a|
-      = f.label 'Выберите изображения к статье:'
-      = f.file_field :image, multiple: true, name: 'article_attachments[image][]'
-  .field
-    = f.label :published
-    = f.check_box :published
-  .actions
-    = f.submit 'Save'
+.input-form
+  = form_for( :article, url: get_article_url(action_name, @article),  html: { class: nil }, method: (:patch if action_name.to_s == 'edit')) do |f|
+    .field
+      = f.label 'Название на русском'
+      = f.text_field :title_ru, required: true
+    .field
+      = f.label 'Название на белорусском'
+      = f.text_field :title_by
+    .field
+      = f.label 'Краткое содержание на русском'
+      = f.text_area :short_content_ru, reqired: true, rows: 8
+    .field
+      = f.label 'Краткое содержание на белорусском'
+      = f.text_area :short_content_by, rows: 8
+    .field
+      = f.label 'Обложка статьи'
+      = f.file_field :head_image, required: !@article.head_image.present?
+    .field
+      = f.label 'Содержание на русском'
+      = f.cktext_area :content_ru, required: true, :ckeditor => {:toolbar => 'mini'}
+    .field
+      = f.label 'Содержание на белорусском'
+      = f.cktext_area :content_by, :ckeditor => {:toolbar => 'mini'}
+    .field
+      = f.label 'Опубликовать?'
+      = f.check_box :is_published
+    .actions
+      = f.submit 'Save'

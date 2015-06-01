@@ -551,3 +551,35 @@ body {
     }
   }
 }
+
+.input-form .images {
+  width: 100%;
+  min-height: 200px;
+  height: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+
+  .main {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+
+    .image {
+      float: left;
+      width: 150px;
+      height: 150px;
+      border: 3px solid black;
+      margin: 5px;
+      overflow: hidden;
+    }
+  }
+}
+

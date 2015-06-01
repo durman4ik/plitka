@@ -7,13 +7,16 @@
     = link_to 'Портфолио', dashboard_portfolio_path, class: "#{'current' if action_name == 'portfolio'}"
     = link_to 'Статьи', dashboard_articles_path, class: "#{'current' if action_name == 'articles'}"
   .exit-link
-    - if params[:action].to_s == 'portfolio'
+    - if action_name == 'portfolio'
       = link_to new_album_path, class: 'button new-album green' do
         = image_tag 'add.png', width: '20px'
         %span Создать альбом
-
-    - if show_back_link(params)
-      = link_to :back, class: 'button gray back' do
+    - if action_name == 'articles'
+      = link_to new_article_path, class: 'button new-album green', data: { no_turbolink: true } do
+        = image_tag 'add.png', width: '20px'
+        %span Создать статью
+    - if show_back_link(controller_name, action_name)
+      = link_to get_back_link(controller_name), class: 'button gray back' do
         = image_tag 'left.png', width: '20px'
         %span Назад
 

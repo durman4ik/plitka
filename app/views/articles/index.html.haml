@@ -1,17 +1,24 @@
 =render 'static/header'
 .articles-base
   %h2.yield.animated.bounceInLeft
-    = 'Статьи'
+    = t('home.articles')
   .wrapper.flex
     .articles.animated.bounceInUp
       .articles-list
-        - @articles.each_with_index do |article, index|
+        - @articles.each do |article|
           .article
-            .article-title
-              %p
-                = article.title
-            .article-thumb
-            -#= image_tag article.url
-            .article-details
-              = link_to 'Читать дальше..', article_path(article), class: 'details-link animation'
+            .title
+              = link_to article_path(article), class: 'animation' do
+                = image_tag article.head_image.url(:thumb), width: '110', height: '110'
+                %span
+                  - if I18n.locale.to_s == 'ru' || !article.title_by.present?
+                    = article.title_ru
+                  - else
+                    = article.title_by
+            .content-preview
+              - if I18n.locale.to_s == 'ru' || !article.title_by.present?
+                = truncate article.short_content_ru, length: 200
+              - else
+                = truncate article.short_content_by, length: 200
+            = link_to t('home.details'), article_path(article), class: 'animation details'
 = render 'static/footer'

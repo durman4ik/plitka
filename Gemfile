@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '4.2.0'
-gem 'mysql2'
+
 gem 'puma'
 
 gem 'jbuilder', '~> 2.0'
@@ -19,10 +19,19 @@ gem 'devise'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
+gem 'redcarpet'
+gem 'ckeditor'
+
 gem 'cancancan'
 
 group :development do
+  gem 'mysql2'
   gem 'better_errors'
   gem 'pry'
   gem 'spring', '~> 1.3.4'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end

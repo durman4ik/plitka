@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
   before_action :authenticate_admin!
 
   def destroy
+    @album = Album.find(params[:album_id])
     @images = Image.where(album_id: params[:album_id])
 
     respond_to do |format|

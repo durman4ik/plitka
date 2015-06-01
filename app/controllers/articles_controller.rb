@@ -3,38 +3,29 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :destroy, :edit, :update]
 
   def index
-    @articles = Article.all
+    @articles = Article.published
   end
 
   def show
-    @article_attachments = @article.article_attachments.all
-    @images = @article_attachments.map { |x| x.image }
   end
 
   def new
     @article = Article.new
-    @article_attachment = @article.article_attachments.build
   end
 
   def edit
-    @article_attachments = @article.article_attachments.all
   end
 
   def create
     @article = Article.new(article_params)
 
     respond_to do |format|
-      if @article.save
-        unless params[:article_attachments].nil? #TODO: вынести два одинаковых метода в модель.
-          params[:article_attachments]['image'].each do |i|
-            @article_attachment = @article.article_attachments.create!(image: i, article_id: @article.id)
-          end
-        end
-        format.html { redirect_to dashboards_article_path(@article), notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
+      if @article.save!
+        flash[:notice] = 'Статья успешно создана!'
+        format.html { redirect_to dashboard_articles_path }
       else
-        format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        flash[:error] = "Ошибка! Не удалось создать статью!\n" + "#{@article.errors.values.join("\n")}"
+        format.html { redirect_to dashboard_articles_path }
       end
     end
   end
@@ -42,37 +33,39 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        unless params[:article_attachments].nil?
-          params[:article_attachments]['image'].each do |i|
-            @article_attachment = @article.article_attachments.create!(image: i, article_id: @article.id)
-          end
-        end
-        format.html { redirect_to dashboards_article_path(@article), notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
+        flash[:notice] = 'Изменения сохранены!'
+        format.html { redirect_to dashboard_articles_path }
       else
-        format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        flash[:error] = "Ошибка! Не удалось изменить статью!\n" + "#{@article.errors.values.join("\n")}"
+        format.html { redirect_to dashboard_articles_path }
       end
     end
   end
 
   def destroy
+    @articles = Article.all
+
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
+      if @article.destroy
+        flash[:notice] = 'Статья успешно удалена!'
+        format.html { redirect_to albums_path  }
+        format.js   { render 'articles/destroy' }
+      else
+        flash[:notice] = 'Ошибка! Не удалось удалить статью!'
+        format.html { redirect_to albums_path }
+        format.js   { render 'static/errors' }
+      end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :published,
-                                      article_attachments_attributes: [:id, :article_id, :image])
+      params.require(:article).permit(:title_ru, :title_by, :short_content_ru, :short_content_by,
+                                      :content_ru, :content_by, :head_image, :is_published)
     end
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   get '', to: redirect("/#{I18n.locale}")
 
   scope "/:locale/", locale: /ru|by/ do
@@ -24,10 +25,7 @@ Rails.application.routes.draw do
       resources :advantages, only: [:create, :destroy]
     end
 
-    resources :articles do
-      resources :article_attachments
-    end
-
+    resources :articles
 
     resources :albums, path: 'portfolio' do
       resources :images, only: [:create, :destroy]

@@ -51,7 +51,7 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @albums = Album.all.includes(:images)
+    @albums = Album.includes(:images).all
 
     @album.destroy
     respond_to do |format|

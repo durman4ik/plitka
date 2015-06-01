@@ -11,6 +11,6 @@ class DashboardsController < ApplicationController
   end
 
   def articles
-    @articles = Article.includes(:article_attachments).all
+    @articles = Article.all
   end
 end

@@ -1,0 +1,17 @@
+- if @articles.blank?
+  .has_no
+    = 'У нас пока нет ни одной статьи. Создайте!'
+- else
+  - @articles.each do |article|
+    .service
+      .title
+        - if I18n.locale.to_s == 'ru' || article.title_by.present?
+          = article.title_ru
+        - else
+          = article.title_by
+      - if current_admin
+        = link_to article_path(article), class: 'remove remove-article', remote: true, method: :delete,
+        data: { confirm: 'Вы уверены?' } do
+          = image_tag 'remove.png', alt: 'Удалить статью'
+        = link_to edit_article_path(article), class: 'remove edit-article', data: { no_turbolink: true } do
+          = image_tag 'edit.png', alt: 'Изменить статью'

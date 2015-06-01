@@ -1,7 +1,7 @@
 = render 'static/header'
 .portfolio
   %h2.yield.animated.bounceInLeft
-    = 'Портфолио'
+    = t('home.portfolio')
   .wrapper.flex
     .albums.animated.bounceInUp
       - @albums.each_with_index do |album, index|

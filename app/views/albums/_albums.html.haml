@@ -18,5 +18,5 @@
         = link_to album_path(album), class: 'remove remove-album', remote: true, method: :delete,
           data: { confirm: 'Вы уверены?' } do
           = image_tag 'remove.png', alt: 'Удалить альбом'
-        = link_to edit_album_path(album), class: 'remove edit-album' do
-          = image_tag 'edit.png', alt: 'Удалить альбом'
+        = link_to edit_album_path(album), class: 'remove edit-album', data: { no_turbolink: true } do
+          = image_tag 'edit.png', alt: 'Изменить альбом'

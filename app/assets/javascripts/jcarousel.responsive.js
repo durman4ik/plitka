@@ -6,18 +6,26 @@
             .on('jcarousel:reload jcarousel:create', function () {
                 var carousel = $(this),
                     width = carousel.innerWidth();
+                var height = carousel.innerHeight();
 
                 if (width >= 800) {
-                    width = 100;
+                    width = 150;
+
                 } else if (width >= 350) {
-                    width = 100;
+                    width = 150;
+
                 }
 
-                carousel.jcarousel('items').css('width', Math.ceil(width) + 'px');
+                if (height >= 800) {
+                    height = 150;
+                } else if (height >= 350) {
+                    height = 150;
+                }
+
+                carousel.jcarousel('items').css('width', width + 'px').css('height', height + 'px');
             })
             .jcarousel({
-                wrap: 'circular',
-                vertical: true
+                wrap: 'circular'
             });
 
         $('.jcarousel-control-prev')

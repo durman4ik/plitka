@@ -17,8 +17,17 @@
 
   .head-image {
     position: absolute;
-    left: 70px;
+    left: 50px;
     top: 125px;
+
+    img {
+      border: 5px solid #333;
+
+      box-shadow: 0px 2px 7px black;
+      -webkit-box-shadow: 0px 2px 7px black;
+      -moz-box-shadow: 0px 2px 7px black;
+      -o-box-shadow: 0px 2px 7px black;
+    }
 
     p.cover-label {
       text-decoration: none;
@@ -28,8 +37,8 @@
 
   .cover {
     position: absolute;
-    left: 70px;
-    top: 290px;
+    left: 50px;
+    top: 320px;
   }
 }
 
@@ -46,6 +55,13 @@
   -webkit-box-shadow: 0px 2px 7px black;
   -moz-box-shadow: 0px 2px 7px black;
   -o-box-shadow: 0px 2px 7px black;
+
+  span {
+    float: left;
+    padding-left: 20px;
+    font-size: 80%;
+    color: #C5A112;
+  }
 }
 .input-form .field input[type="text"],
 .input-form .field input[type="date"],
