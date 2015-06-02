@@ -30,5 +30,56 @@
                   = service.title_ru
                 - else
                   = service.title_by
-= render 'static/footer'
+  .about-third
+    .wrapper
+      .inline
+        .call-us
+          .contact-inner
+            .addresses-box
+              .address-top
+                %h5
+                  = 'Телефоны для связи:'
+              .address-bottom
+                - @phones.each do |x|
+                  .phone
+                    = x.number + ' ' + x.operator
+            .addresses-box
+              .address-top
+                %h5
+                  = 'E-mail:'
+              .address-bottom
+                = @about.email
+            .addresses-box
+              .address-top
+                %h5
+                  = 'Юридическая информация:'
+              .address-bottom
+                - if I18n.locale.to_s == 'ru' || !@about.law_info_by.present?
+                  = raw @about.law_info_ru
+                - else
+                  = raw @about.law_info_by
+        .write-us
+          .contact-inner
+            %h5
+              = 'Задай нам вопрос!'
+            = form_for @contact, html: { id: 'contact-form', class: nil} do |f|
+              %fieldset
+                .form-group
+                  = f.label 'Ваше имя:'
+                  = f.text_field :name, required: true
+                .form-group
+                  = f.label 'Email (не обязательно):'
+                  = f.text_field :email
+                .form-group
+                  = f.label 'Телефон для связи:'
+                  = f.text_field :phone, reqired: true
+                .form-group
+                  = f.label 'Ваше сообщение:'
+                  = f.text_area :message, required: true, rows: 6
+                .form-group.hidden
+                  = f.label 'Оставте это поле пустым!'
+                  = f.text_field :nickname, :hint => 'Оставте это поле пустым!'
+                .form-group
+                  = f.submit 'Отправить', class: 'send-button'
 
+= render 'static/footer'

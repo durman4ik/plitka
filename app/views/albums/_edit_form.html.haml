@@ -7,7 +7,7 @@
     %p.cover-label
       = 'Обложка альбома:'
     = image_tag @album.head_image.url(:thumb)
-  = form_for :album, url: get_album_url(action_name, @album), method: (:patch if action_name.to_s == 'edit') do |f|
+  = form_for :album, url: album_path(@album), method: :patch do |f|
     .edit-field
       = f.label 'Название на русском'
       = f.text_field :title_ru, placeholder: 'Название на русском', required: true
@@ -15,7 +15,7 @@
       = f.label 'Название на белорусском'
       = f.text_field :title_by, placeholder: 'Название на беларусском'
     .cover
-      = f.file_field :head_image, accept: 'image/png,image/gif,image/jpeg', require: @album.head_image.nil?
+      = f.file_field :head_image, accept: 'image/png,image/gif,image/jpeg,image/jpg', require: @album.head_image.nil?
     .edit-field
       = f.fields_for :images do |a|
         = f.label 'Выберите изображения для альбома:'

@@ -1,5 +1,5 @@
 .input-form
-  = form_for( :article, url: get_article_url(action_name, @article),  html: { class: nil }, method: (:patch if action_name.to_s == 'edit')) do |f|
+  = form_for(:article, url: get_article_url(@article), method: (:patch if action_name == 'edit')) do |f|
     .field
       = f.label 'Название на русском'
       = f.text_field :title_ru, required: true
@@ -14,7 +14,7 @@
       = f.text_area :short_content_by, rows: 8
     .field
       = f.label 'Обложка статьи'
-      = f.file_field :head_image, required: !@article.head_image.present?
+      = f.file_field :head_image, accept: 'image/png,image/gif,image/jpeg,image/jpg', required: !@article.head_image.present?
     .field
       = f.label 'Содержание на русском'
       = f.cktext_area :content_ru, required: true, :ckeditor => {:toolbar => 'mini'}

@@ -1,14 +1,14 @@
 .input-form
   %h1
     = 'Новый альбом'
-  = form_for :album, url: get_album_url(action_name, @album), method: (:patch if action_name.to_s == 'edit') do |f|
+  = form_for :album, url: albums_path do |f|
     .field
       = f.text_field :title_ru, placeholder: 'Название на русском', required: true
     .field
       = f.text_field :title_by, placeholder: 'Название на белорусском'
     .field
       = f.label 'Обложка альбома'
-      = f.file_field :head_image, accept: 'image/png,image/gif,image/jpeg', required: true
+      = f.file_field :head_image, accept: 'image/png,image/gif,image/jpeg,image/jpg', required: true
     .field
       = f.fields_for :images do |a|
         = f.label 'Выберите изображения:'

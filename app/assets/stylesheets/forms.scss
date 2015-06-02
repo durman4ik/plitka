@@ -147,6 +147,11 @@
   color: #fff;
 }
 .input-form input[type="submit"]:hover,
-.input-form input[type="button"]:hover{
+.input-form input[type="button"]:hover {
   background: #428342;
+}
+.input-form .field input[type="checkbox"],
+.input-form .edit-field input[type="file"]
+{
+  margin: 10px;
 }

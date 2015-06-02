@@ -13,4 +13,8 @@ class DashboardsController < ApplicationController
   def articles
     @articles = Article.all
   end
+
+  def about
+    @about = About.first
+  end
 end

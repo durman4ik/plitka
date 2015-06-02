@@ -6,6 +6,7 @@
     = link_to 'Основная', dashboard_path, class: "#{'current' if action_name == 'index'}"
     = link_to 'Портфолио', dashboard_portfolio_path, class: "#{'current' if action_name == 'portfolio'}"
     = link_to 'Статьи', dashboard_articles_path, class: "#{'current' if action_name == 'articles'}"
+    = link_to 'Информация о нас', dashboard_about_in_path, class: "#{'current' if action_name == 'about'}"
   .exit-link
     - if action_name == 'portfolio'
       = link_to new_album_path, class: 'button new-album green' do

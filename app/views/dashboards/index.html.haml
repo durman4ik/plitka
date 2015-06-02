@@ -2,7 +2,9 @@
   = render 'dashboards/menu'
   .dashboard-main-wrapper
     .blocks
+
       // Services.
+
       .block.services
         %h2.head.info
           = 'Сейчас мы оказываем услуги:'
@@ -10,7 +12,9 @@
             = image_tag 'add.png', class: 'link-add service-add'
         .services-list
           = render 'services/services'
+
       // Advantages.
+
       .block.advantages
         %h2.head.info
           = 'Наши преимущества:'
@@ -18,13 +22,17 @@
             = image_tag 'add.png', class: 'link-add advantage-add'
         .advantages-list
           = render 'advantages/advantage'
+
       // Phones.
+
       .block.phones
         %h2.head.info
           = 'Наши номера телефонов:'
         .phones-list
           = render 'phones/phone'
+
     // Services form.
+
     .new-service-form{data: {state: 'hidden'}}
       .form
         %h2.head
@@ -36,7 +44,9 @@
           = f.text_field :title_by, placeholder: 'Название на беларусском'
           = f.file_field :image, prompt: 'Выберите изображение', class: 'image'
           = f.submit 'Save', class: 'btn'
+
     // Advantages form.
+
     .new-advantage-form{data: {state: 'hidden'}}
       .form
         %h2.head
@@ -47,6 +57,9 @@
           = f.text_field :title_ru, placeholder: 'Название на русском'
           = f.text_field :title_by, placeholder: 'Название на беларусском'
           = f.submit 'Save', class: 'btn'
+
+    // Notifications.
+
     .notifications
       = render 'static/error'
 

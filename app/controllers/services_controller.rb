@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: [:destroy]
+
   before_action :authenticate_admin!
 
   def create
@@ -17,6 +17,7 @@ class ServicesController < ApplicationController
   end
 
   def destroy
+    @service = Service.find(params[:id])
     @services = Service.all
 
     respond_to do |format|
@@ -25,7 +26,7 @@ class ServicesController < ApplicationController
         format.html { redirect_to dashboard_path  }
         format.js   { render 'services/destroy' }
       else
-        flash[:notice] = 'Ошибка! Не удалось удалить услугу!'
+        flash[:notice] = 'Ошибка! Не удалось удалить услугу!' + "#{@service.errors.values.join("\n")}"
         format.html { redirect_to dashboard_path }
         format.js   { render 'static/errors' }
       end
@@ -33,10 +34,6 @@ class ServicesController < ApplicationController
   end
 
   private
-
-    def set_service
-      @service = Service.find(params[:id])
-    end
 
     def service_params
       params.require(:service).permit(:title_ru, :title_by, :image)

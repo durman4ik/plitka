@@ -3,12 +3,12 @@ class CreateAlbums < ActiveRecord::Migration
     create_table :albums do |t|
       t.string    :title_ru
       t.string    :title_by
-      t.string    :description
       t.string    :head_image
+      t.string    :slug,        unique: true
 
       t.timestamps null: false
     end
 
-    add_column :images, :album_id, :integer
+    add_index :albums, :slug
   end
 end

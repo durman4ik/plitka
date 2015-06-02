@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base
-
-  DEFAULT_IMAGE = 'default.png'
+  extend FriendlyId
+  friendly_id :title_ru, use: :slugged
 
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
@@ -9,7 +9,6 @@ class Album < ActiveRecord::Base
 
   validates :title_ru, presence: { message: "\nНазвание на русском не может быть пустым! " }
   validates :head_image, presence: { message: "\nВыберите обложку альбома. Это обязательно!" }
-  #TODO: Сделать валидацию формата для картинок и обложки.
 
   def save_album(album_params = {}, images_params = {})
     ActiveRecord::Base.transaction do
@@ -29,5 +28,9 @@ class Album < ActiveRecord::Base
       update(album_params)
       save_images(images_params) unless images_params[:images_attributes].nil?
     end
+  end
+
+  def normalize_friendly_id(input)
+    input.to_slug.normalize(transliterations: :russian).to_s
   end
 end

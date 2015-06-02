@@ -19,10 +19,12 @@ gem 'devise'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
-gem 'redcarpet'
 gem 'ckeditor'
 
-gem 'cancancan'
+gem 'friendly_id'
+gem 'babosa'
+
+gem 'mail_form'
 
 group :development do
   gem 'mysql2'

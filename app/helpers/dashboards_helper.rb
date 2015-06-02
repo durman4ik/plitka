@@ -7,5 +7,4 @@ module DashboardsHelper
   def get_back_link(controller)
     controller.to_s == 'articles' ? dashboard_articles_path : dashboard_portfolio_path
   end
-
 end

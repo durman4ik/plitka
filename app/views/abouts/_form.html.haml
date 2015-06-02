@@ -1,0 +1,13 @@
+.input-form
+  = form_for(:about, url: get_about_url(@about), method: (:patch unless @about.nil?)) do |f|
+    .field
+      = f.label 'E-mail'
+      = f.text_field :email, required: true
+    .field
+      = f.label 'Юридическая информация на русском'
+      = f.cktext_area :law_info_ru, required: true, :ckeditor => {:toolbar => 'mini'}
+    .field
+      = f.label 'Юридическая информация на белорусском'
+      = f.cktext_area :law_info_by, :ckeditor => {:toolbar => 'mini'}
+    .actions
+      = f.submit 'Save'

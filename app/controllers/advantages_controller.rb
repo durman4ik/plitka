@@ -1,5 +1,5 @@
 class AdvantagesController < ApplicationController
-  before_action :set_advantage, only: [:destroy]
+
   before_action :authenticate_admin!
   def create
     @advantage = Advantage.new(advantage_params)
@@ -16,6 +16,7 @@ class AdvantagesController < ApplicationController
   end
 
   def destroy
+    @advantage = Advantage.find(params[:id])
     @advantages = Advantage.all
 
     respond_to do |format|
@@ -32,9 +33,6 @@ class AdvantagesController < ApplicationController
   end
 
   private
-    def set_advantage
-      @advantage = Advantage.find(params[:id])
-    end
 
     def advantage_params
       params.require(:advantage).permit(:title_ru, :title_by)

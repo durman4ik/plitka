@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   mount Ckeditor::Engine => '/ckeditor'
   get '', to: redirect("/#{I18n.locale}")
 
@@ -8,7 +9,8 @@ Rails.application.routes.draw do
     root 'home#index'
     get 'o_nas'                   => 'home#o_nas'
     get 'dashboard/my_portfolio'  => 'dashboards#portfolio', as: :dashboard_portfolio
-    get 'dashboard/articles'      => 'dashboards#articles', as: :dashboard_articles
+    get 'dashboard/articles'      => 'dashboards#articles',  as: :dashboard_articles
+    get 'dashboard/abouts'        => 'dashboards#about',     as: :dashboard_about_in
 
 
     devise_for :admins, :skip => [:sessions]
@@ -23,9 +25,11 @@ Rails.application.routes.draw do
       resources :phones, only: [:create, :destroy]
       resources :services, only: [:create, :destroy]
       resources :advantages, only: [:create, :destroy]
+      resources :abouts, only: [:create, :update, :destroy]
     end
 
     resources :articles
+    resources :contacts, only: [:create]
 
     resources :albums, path: 'portfolio' do
       resources :images, only: [:create, :destroy]
