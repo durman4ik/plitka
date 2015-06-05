@@ -462,7 +462,11 @@ section.first {
   }
 
   .content-body {
+    text-align: left;
+  }
 
+  .content-body > p + img {
+    text-align: center;
   }
 }
 
@@ -528,7 +532,7 @@ section.first {
         height: 150px;
         float: left;
         padding: 10px;
-        background: #F0F0F0;
+        background: #FFFFFF;
         margin: 4px;
 
         box-shadow: 1px 1px 3px black;
@@ -542,7 +546,7 @@ section.first {
         transition: 0.3s ease-in-out;
 
         &:hover {
-          background: #D3D3D3;
+          background: #e8e8e8;
         }
 
         .title {
@@ -705,6 +709,15 @@ section.first {
           width: 56%;
           cursor: pointer;
           float: right;
+
+          -webkit-transition: background 0.3s ease-in-out;  // Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6
+          -moz-transition: background 0.3s ease-in-out;
+          -o-transition: background 0.3s ease-in-out;
+          transition: background 0.3s ease-in-out;
+
+          &:hover {
+            background-color: #4C4C4C;
+          }
         }
       }
     }
