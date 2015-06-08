@@ -1,10 +1,10 @@
-#$(document).on('scroll', ->
-#  if $(this).scrollTop() > 400
-#    $('.header-m').addClass('showed')
-#  else
-#    $('.header-m').removeClass('showed')
-#)
-#
+$(document).on('scroll', ->
+  if $(this).scrollTop() > 130
+    $('.header-m').addClass('showed')
+  else
+    $('.header-m').removeClass('showed')
+)
+
 $(document).on('ready page:load', ->
   if $('.blink')
     setInterval(blink, 800)
@@ -21,11 +21,18 @@ $(document).on('ready page:load', ->
     if $(".about-info")
       $(".about-info").addClass('animated bounceOutRight')
     if $(".about-second")
-      $(".about-second").addClass('animated bounceOutDown')
+      $(".services.animated.bounceIn").removeClass('bounceIn').addClass('bounceOut')
     if $(".hero")
       $(".hero").addClass('animated tada')
+    if $(".call-us")
+      $(".call-us").addClass('bounceOutLeft')
+    if $(".write-us")
+      $(".write-us").addClass('animated bounceOutRight')
+    if $(".show-portfolio")
+      $(".connected-carousels .navigation").addClass('animated bounceOutLeft')
+      $(".stage.fade-in.item-1").removeClass('fade-in item-4').addClass('animated bounceOutRight')
+      $(".album-title").removeClass('bounceInLeft').addClass('bounceOutLeft')
     delay 800, -> redirect(event)
-
 )
 
 delay = (ms, func) -> setTimeout func, ms

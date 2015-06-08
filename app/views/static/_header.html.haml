@@ -1,19 +1,28 @@
--#.header-m
--#  .wrapper-m
--#    =link_to root_path, class: 'logo-m' do
--#      =image_tag 'logo_22.png'
--#    .phones
--#      - @phones.each do |phone|
--#        %p
--#          = phone.number
--#    %nav.navigation
--#      =render 'static/nav_links'
+.header-m
+  .wrapper-m
+    =link_to root_path, class: 'logo-m' do
+      =image_tag 'logo_22.png'
+    .phones
+      - @phones.each do |phone|
+        %p
+          = phone.number
+    .languages
+      -if I18n.locale == I18n.default_locale
+        =link_to '', params.merge({locale: 'by'}), class: 'flag by animation'
+      -else
+        =link_to '', params.merge({locale: 'ru'}), class: 'flag ru animation'
+    %nav.navigation
+      =render 'static/nav_links'
 #header
   #header_inner.wrapper
     =link_to root_path, class: 'logo animation' do
       =image_tag 'logo_11.png'
     #navigation
       =render 'static/nav_links'
+      -if I18n.locale == I18n.default_locale
+        =link_to '', params.merge({locale: 'by'}), class: 'flag by animation'
+      -else
+        =link_to '', params.merge({locale: 'ru'}), class: 'flag ru animation'
     - if current_admin
       .admin-here
         Здравствуйте, Администратор!

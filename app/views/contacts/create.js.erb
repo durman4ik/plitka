@@ -1,0 +1,9 @@
+$(".contact-inner.animated.bounceInRight").addClass('bounceOutRight');
+delay(800, name);
+
+function name(){
+    $(".write-us").html('<%= j( render 'contacts/form' ) %>');
+}
+function delay(ms, func){
+    setTimeout(func, ms);
+}

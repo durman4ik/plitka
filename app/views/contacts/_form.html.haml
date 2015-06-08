@@ -1,0 +1,22 @@
+.contact-inner.animated.bounceInRight
+  %h5
+    = t('about.ask_question')
+  = form_for :contact, url: contacts_path, remote: true, html: { id: 'contact-form', class: nil} do |f|
+    %fieldset
+      .form-group
+        = f.label t('about.form.name')
+        = f.text_field :name, required: true
+      .form-group
+        = f.label t('about.form.email')
+        = f.text_field :email
+      .form-group
+        = f.label t('about.form.phone')
+        = f.text_field :phone, reqired: true
+      .form-group
+        = f.label t('about.form.message')
+        = f.text_area :message, required: true, rows: 6
+      .form-group.hidden
+        = f.label 'Оставте это поле пустым!'
+        = f.text_field :nickname, :hint => 'Оставте это поле пустым!'
+      .form-group
+        = f.submit t('about.form.submit'), class: 'send-button', remote: 'true'

@@ -4,16 +4,9 @@
     .articles.animated.bounceInUp
       .content
         %h2.content-title
-          - if I18n.locale.to_s == 'ru' || !@article.title_by.present?
-            = @article.title_ru
-          - else
-            = @article.title_by
+          = translate_content(@article.content_ru, @article.content_by, nil)
         .content-body
-          - if I18n.locale.to_s == 'ru' || !@article.content_by.present?
-            = raw (@article.content_ru)
-          - else
-            = raw (@article.content_by)
-
+          = translate_content(@article.content_ru, @article.content_by, nil)
 
 = render 'static/footer'
 

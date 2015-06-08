@@ -1,17 +1,20 @@
-- if @articles.blank?
-  .has_no
-    = 'У нас пока нет ни одной статьи. Создайте!'
-- else
+- if @articles.present?
   - @articles.each do |article|
-    .service
+    .article
+      .article-image
+        = image_tag article.head_image
       .title
-        - if I18n.locale.to_s == 'ru' || !article.title_by.present?
-          = article.title_ru
-        - else
-          = article.title_by
+        = translate_content(article.title_ru, article.title_by, nil)
+      .is-published
+        = 'Опубликована?'
+        = article.is_published ? 'Да' : 'Нет'
       - if current_admin
-        = link_to article_path(article), class: 'remove remove-article', remote: true, method: :delete,
+        .links
+          = link_to article_path(article), class: 'remove remove-article', remote: true, method: :delete,
         data: { confirm: 'Вы уверены?' } do
-          = image_tag 'remove.png', alt: 'Удалить статью'
-        = link_to edit_article_path(article), class: 'remove edit-article', data: { no_turbolink: true } do
-          = image_tag 'edit.png', alt: 'Изменить статью'
+            = image_tag 'remove.png', alt: 'Удалить статью'
+          = link_to edit_article_path(article), class: 'remove edit-article', data: { no_turbolink: true } do
+            = image_tag 'edit.png', alt: 'Изменить статью'
+- else
+  .has_no
+  = t('dashboard.no_articles')

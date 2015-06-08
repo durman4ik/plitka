@@ -4,14 +4,15 @@
     = t('home.portfolio')
   .wrapper.flex
     .albums.animated.bounceInUp
-      - @albums.each do |album|
-        = link_to album_path(album), class: 'animation', data: { no_turbolink: true } do
-          .album
-            .head-image
-              = image_tag album.head_image.url(:medium)
-            .title
-              - if I18n.locale.to_s == 'ru' || album.title_by.blank?
-                = album.title_ru
-              - else
-                = album.title_by
+      - if @albums.present?
+        - @albums.each do |album|
+          = link_to album_path(album), class: 'animation', data: { no_turbolink: true } do
+            .album
+              .head-image
+                = image_tag album.head_image.url(:medium)
+              .title
+                = translate_content(album.title_ru, album.title_by, nil)
+      - else
+        .has_no
+          = t('dashboard.no_albums_main')
 = render 'static/footer'

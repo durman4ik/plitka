@@ -19,6 +19,60 @@ body {
   }
 }
 
+/* General Structure and Layout */
+
+body {
+  color: #512b1b;
+}
+
+body.body {
+  background: #e2ddd7 url(asset-path('paper_bg.jpg')) repeat;
+}
+
+#header {
+  background: url(asset-path('header_bg.jpg')) no-repeat top center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+#header, #header_inner {
+  height: 155px;
+}
+
+#navigation {
+  right: 10px;
+  width: 450px;
+  top: 95px;
+}
+
+.wrapper, h1.logo, a.logo {
+  position: relative;
+}
+
+#navigation {
+  position: absolute;
+}
+
+/* Header */
+
+h1.logo, a.logo {
+  background: url(asset-path("logo_11.png")) no-repeat;
+  display: block;
+  height: 100px;
+  left: 10px;
+  text-indent: -9999px;
+  width: 350px;
+  top: 30px;
+  background-size: contain;
+  padding: 0 !important;
+}
+
+h1.logo a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .yield {
   font-size: 40px;
   color: black;
@@ -58,9 +112,18 @@ body {
   padding-bottom: 35px;
   background: url(asset-path("footer_divider.jpg")) no-repeat 0 0;
   height: 1px;
+  position: relative;
   background-size: 100%;
   text-align: center;
   font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .author {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 10px;
+    color: #919191;
+  }
 }
 
 section.first {
@@ -215,26 +278,33 @@ section.first {
   position: fixed;
   width: 100%;
   height: 75px;
-  background: rgba(255, 255, 255, 0.93);
-  border-bottom: 1px solid rgb(216, 216, 216);
+  background: #e2ddd7 url(asset-path("paper_bg.jpg")) repeat;
+  border-bottom: 1px solid #D8D8D8;
 
   z-index: 30;
 
   font-size: 16px;
   font-family: monospace;
   text-shadow: 2px 2px 8px rgba(24, 22, 22, 0.49);
+  overflow: hidden;
 
-  transform: translate(0,-75px);
-  -webkit-transform: translate(0,-75px);
-  -o-transform: translate(0,-75px);
-  -moz-transform: translate(0,-75px);
+  transform: translate(0,-100px);
+  -webkit-transform: translate(0,-100px);
+  -o-transform: translate(0,-100px);
+  -moz-transform: translate(0,-100px);
 
   -webkit-transition:  0.5s ease-in-out;  // Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6
   -moz-transition:  0.5s ease-in-out;
   -o-transition:  0.5s ease-in-out;
   transition:  0.5s ease-in-out;          // Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+
 
+  box-shadow: 0 3px 20px #000000;
+  -webkit-box-shadow: 0 3px 20px #000000;
+  -moz-box-shadow: 0 3px 20px #000000;
+  -o-box-shadow: 0 3px 20px #000000;
+
   .wrapper-m {
+    position: relative;
     height: inherit;
     width: 1300px;
     margin: 0 auto;
@@ -242,6 +312,7 @@ section.first {
     a.logo-m {
       float: left;
       padding: 0 0 0 20px;
+      border: none;
     }
 
     img {
@@ -251,16 +322,40 @@ section.first {
 
     .navigation {
       float: right;
-      padding: 26px;
+      padding: 30px;
+      background: url(asset-path("header_bg.jpg")) no-repeat 95% 115%;
+      background-size: 190%;
 
       .switch {
         position: inherit;
       }
     }
 
+    .languages {
+      position: absolute;
+      bottom: 10px;
+      right: -10px;
+      width: 20px;
+      height: 47px;
+
+      a {
+        float: left;
+        padding: 12px 12px;
+        margin: 7px 0;
+        border-radius: 50px;
+        background-size: 150%;
+      }
+    }
+
     .phones {
       float: right;
-      padding: 8px 20px 0 20px;
+      padding: 0 20px 0 20px;
+
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
   }
 }
@@ -307,6 +402,12 @@ section.first {
 }
 
 // Portfolio.
+
+.album-title {
+  text-align: right;
+  margin-right: 30px;
+  font-size: 30px;
+}
 
 .portfolio, .articles-base {
   padding-bottom: 50px;
@@ -426,7 +527,10 @@ section.first {
         position: inherit;
         padding-bottom: 5px;
 
-        img {
+        .image {
+          height: 110px;
+          width: 110px;
+          overflow: hidden;
           float: left;
           margin-right: 7px;
 
@@ -441,6 +545,7 @@ section.first {
         position: inherit;
         font-size: 13px;
         color: #000000;
+        margin-left: 117px;
       }
 
       a.details {

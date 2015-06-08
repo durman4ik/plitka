@@ -1,16 +1,10 @@
-- if @albums.blank?
-  .has_no
-    = 'У нас пока нет ни одного альбома. Создайте!'
-- else
+- if @albums.present?
   - @albums.each do |album|
     .service
       .service-image
         = image_tag album.head_image.url(:thumb)
       .title
-        - if I18n.locale.to_s == 'ru' || !album.title_by.present?
-          = album.title_ru
-        - else
-          = album.title_by
+        = translate_content(album.title_ru, album.title_by, nil)
       .image-counter
         = 'Фотографий в альбоме: '
         = album.images.to_a.length
@@ -20,3 +14,6 @@
           = image_tag 'remove.png', alt: 'Удалить альбом'
         = link_to edit_album_path(album), class: 'remove edit-album', data: { no_turbolink: true } do
           = image_tag 'edit.png', alt: 'Изменить альбом'
+- else
+  .has_no
+    = t('dashboard.no_albums')

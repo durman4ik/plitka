@@ -4,21 +4,26 @@
     = t('home.articles')
   .wrapper.flex
     .articles.animated.bounceInUp
-      .articles-list
-        - @articles.each do |article|
-          .article
-            .title
-              = link_to article_path(article), class: 'animation' do
-                = image_tag article.head_image.url(:thumb), width: '110', height: '110'
-                %span
-                  - if I18n.locale.to_s == 'ru' || !article.title_by.present?
-                    = article.title_ru
-                  - else
-                    = article.title_by
-            .content-preview
-              - if I18n.locale.to_s == 'ru' || !article.title_by.present?
-                = truncate article.short_content_ru, length: 200
-              - else
-                = truncate article.short_content_by, length: 200
-            = link_to t('home.details'), article_path(article), class: 'animation details'
+      - if @articles.present?
+        .articles-list
+          - @articles.each do |article|
+            .article
+              .title
+                = link_to article_path(article), class: 'animation' do
+                  .image
+                    = image_tag article.head_image.url(:thumb), width: '110'
+                  %span
+                    - if I18n.locale.to_s == 'ru' || !article.title_by.present?
+                      = article.title_ru
+                    - else
+                      = article.title_by
+              .content-preview
+                - if I18n.locale.to_s == 'ru' || !article.title_by.present?
+                  = truncate article.short_content_ru, length: 200
+                - else
+                  = truncate article.short_content_by, length: 200
+              = link_to t('home.details'), article_path(article), class: 'animation details'
+      - else
+        .has_no
+          = t('dashboard.no_article_main')
 = render 'static/footer'

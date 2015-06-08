@@ -69,7 +69,7 @@ class AlbumsController < ApplicationController
 
   private
     def set_album
-      @album = Album.friendly.find(params[:id])
+      @album = Album.includes(:images).friendly.find(params[:id])
     end
 
     def album_params

@@ -452,7 +452,7 @@ body {
     background-size: 60%;
   }
 
-  .services-list {
+  .services-list, .articles-list {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -475,7 +475,7 @@ body {
     -moz-justify-content: center;
     -o-justify-content: center;
 
-    .service {
+    .service, .article {
       width: 30%;
       height: 150px;
       position: relative;
@@ -507,19 +507,27 @@ body {
         word-wrap: break-word;
       }
 
-      .service-image {
+      .service-image, .article-image {
         float: left;
         width: 135px;
-        padding: 7px;
+        height: 135px;
+        margin: 7px;
+        overflow: hidden;
       }
 
-      .image-counter {
+      .image-counter, .is-published {
         position: absolute;
         bottom: 15px;
         right: 55px;
         float: left;
         font-size: 12px;
         padding-top: 55px;
+      }
+
+      .links {
+        position: absolute;
+        right: 10px;
+        top: 10px;
       }
 
       img {
