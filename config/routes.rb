@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get '', to: redirect("/#{I18n.locale}")
 
-  scope "/:locale/", locale: /ru|by/ do
+  scope '/:locale/', locale: /ru|by/ do
 
     root 'home#index'
     get 'o_nas'                   => 'home#o_nas'

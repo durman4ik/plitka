@@ -4,7 +4,7 @@
     .articles.animated.bounceInUp
       .content
         %h2.content-title
-          = translate_content(@article.content_ru, @article.content_by, nil)
+          = translate_content(@article.title_ru, @article.title_by, nil)
         .content-body
           = translate_content(@article.content_ru, @article.content_by, nil)
 

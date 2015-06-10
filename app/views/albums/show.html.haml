@@ -18,9 +18,9 @@
               - @album.images.each do |image|
                 %li
                   = image_tag image.url.url, width: '800px'
-          %a.prev.prev-stage{:href => "#"}
+          %a.prev.prev-stage{:href => '#'}
             %span ‹
-          %a.next.next-stage{:href => "#"}
+          %a.next.next-stage{:href => '#'}
             %span ›
   - else
     = t('portfolio.blank_album')

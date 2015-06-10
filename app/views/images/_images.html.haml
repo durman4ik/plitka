@@ -1,6 +1,6 @@
-- @images.each_with_index do |image, index|
+- @images.each do |image|
   .main.flex
-    =link_to image.url.url, data: {lightbox: "roadtrip"} do
+    =link_to image.url.url, data: {lightbox: 'roadtrip'} do
       .image
         = image_tag image.url.url(:thumb), width: '150px'
     .remove-link

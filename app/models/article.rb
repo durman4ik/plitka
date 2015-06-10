@@ -10,7 +10,7 @@ class Article < ActiveRecord::Base
   validates :content_ru, presence: { message: 'Содержание статьи на русском не может быть пустым! '}
   validates :head_image, presence: { message: 'Необходимо выбрать обложку статьи!'}
   validates :title_ru, :title_by, length: { maximum: 200,
-                                            too_long: "Максимально допустимая длина заголовка %{count} знаков" }
+                                            too_long: 'Максимально допустимая длина заголовка %{count} знаков'}
 
 
   scope :published, -> { where(is_published:  true) }
