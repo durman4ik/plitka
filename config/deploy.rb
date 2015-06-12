@@ -47,11 +47,6 @@ namespace :puma do
 end
 
 namespace :deploy do
-
-  with rails_env: (fetch(:rails_env) || fetch(:stage)) do
-    execute :rake, "sitemap:create"
-  end
-  
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
