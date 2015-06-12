@@ -1,7 +1,7 @@
 # Change these
 server '104.236.237.228', port: 2805, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:durman4ik/plitka.git'
+set :repo_url,        'https://github.com/durman4ik/plitka.git'
 set :application,     'plitka'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
@@ -47,6 +47,11 @@ namespace :puma do
 end
 
 namespace :deploy do
+
+  with rails_env: (fetch(:rails_env) || fetch(:stage)) do
+    execute :rake, "sitemap:create"
+  end
+  
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do

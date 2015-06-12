@@ -4,6 +4,8 @@ ruby '2.1.5'
 gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'puma'
+gem 'execjs'
+gem 'therubyracer'
 
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -37,8 +39,3 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
 end
-
-#group :production do
-#  gem 'pg'
-#  gem 'rails_12factor'
-#end
