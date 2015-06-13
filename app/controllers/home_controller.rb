@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @services = Service.all
     @advantages = Advantage.all
     @contact = Contact.new
-    @about = About.first
+    @about = About.first || About.create!
   end
 
   def portfolio
