@@ -1,7 +1,8 @@
 = render 'static/header'
 .portfolio
-  %h2.yield.animated.bounceInLeft
-    = t('home.portfolio')
+  .wrapper
+    %h2.yield.animated.bounceInLeft
+      = t('home.portfolio')
   .wrapper.flex
     .albums.animated.bounceInUp
       - if @albums.present?

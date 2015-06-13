@@ -1,7 +1,8 @@
 =render 'static/header'
 .articles-base
-  %h2.yield.animated.bounceInLeft
-    = t('home.articles')
+  .wrapper
+    %h2.yield.animated.bounceInLeft
+      = t('home.articles')
   .wrapper.flex
     .articles.animated.bounceInUp
       - if @articles.present?
