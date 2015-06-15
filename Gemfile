@@ -3,6 +3,8 @@ ruby '2.1.5'
 
 gem 'rails', '4.2.0'
 gem 'mysql2'
+gem 'mysql'
+
 gem 'puma'
 gem 'execjs'
 gem 'therubyracer'
