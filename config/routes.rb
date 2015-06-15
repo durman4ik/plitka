@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
 
+
   mount Ckeditor::Engine => '/ckeditor'
+  get 'sitemap' => 'home#sitemap', format: :xml, as: :sitemap
+  get 'robots' => 'home#robots', format: :text, as: :robots
+
   get '', to: redirect("/#{I18n.locale}")
 
   scope '/:locale/', locale: /ru|by/ do
@@ -35,11 +39,6 @@ Rails.application.routes.draw do
       resources :images, only: [:create, :destroy]
     end
   end
-
-
-
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -27,6 +27,11 @@ gem 'friendly_id'
 gem 'babosa'
 
 gem 'mail_form'
+gem 'dynamic_sitemaps'
+gem 'cancancan'
+group :production do
+  gem 'whenever', :require => false
+end
 
 group :development do
   gem 'better_errors'

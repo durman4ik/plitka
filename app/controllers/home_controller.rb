@@ -16,4 +16,20 @@ class HomeController < ApplicationController
   def articles
     @articles = Article.all
   end
+
+  def sitemap
+    path = Rails.root.join("public", "sitemaps", "sitemap.xml")
+    if File.exists?(path)
+      respond_to do |format|
+        format.xml { render xml: open(path).read }
+        format.html { redirect_to root_url }
+      end
+    else
+      render text: "Sitemap not found.", status: :not_found
+    end
+  end
+
+  def robots
+    render 'home/robots'
+  end
 end
