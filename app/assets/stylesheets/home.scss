@@ -96,7 +96,6 @@
 
     .has-no {
       width: 100%;
-      position: absolute;
       text-align: center;
       margin-top: 100px;
       color: #575757;
@@ -895,6 +894,10 @@
   .wrapper {
     width: 80%;
     margin: 0 auto;
+
+    .has-no {
+      font-size: 15px;
+    }
   }
 
   .yield {
@@ -920,8 +923,8 @@
     }
 
     .hero {
-      width: 160px;
-      height: 200px;
+      width: 156px;
+      height: 213px;
 
       .blink {
         display: none;
@@ -939,11 +942,20 @@
     height: 80px;
     background: none;
 
+    a {
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    a:hover {
+        border-bottom: 1px solid #560000;
+    }
+
     a.logo {
       left: 0;
       top: 10px;
       height: 50px;
       width: 200px;
+      border-bottom: none;
     }
 
     #navigation {
@@ -953,9 +965,7 @@
       font-size: 0.6em;
 
       a {
-        width: 150px;
-        height: 40px;
-        padding: 0 8px 0 8px;
+        padding: 0px 7px 0 10px;
       }
     }
   }
@@ -1223,6 +1233,5 @@
         }
       }
     }
-
   }
 }
