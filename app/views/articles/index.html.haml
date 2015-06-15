@@ -1,4 +1,5 @@
 =render 'static/header'
+- meta title: t('home.articles_title')
 .articles-base
   .wrapper
     %h2.yield.animated.bounceInLeft
@@ -25,6 +26,6 @@
                   = truncate article.short_content_by, length: 200
               = link_to t('home.details'), article_path(article), class: 'animation details'
       - else
-        .has_no
+        .has-no
           = t('dashboard.no_article_main')
 = render 'static/footer'

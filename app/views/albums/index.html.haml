@@ -1,4 +1,5 @@
 = render 'static/header'
+- meta title: t('home.portfolio_seo')
 .portfolio
   .wrapper
     %h2.yield.animated.bounceInLeft
@@ -14,6 +15,6 @@
               .title
                 = translate_content(album.title_ru, album.title_by, nil)
       - else
-        .has_no
+        .has-no
           = t('dashboard.no_albums_main')
 = render 'static/footer'

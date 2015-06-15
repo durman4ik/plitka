@@ -22,6 +22,9 @@
       = f.label 'Содержание на белорусском'
       = f.cktext_area :content_by, :ckeditor => {:toolbar => 'mini'}
     .field
+      = f.label 'Ссылка: (не редактировать)'
+      = f.text_field :slug
+    .field
       = f.label 'Опубликовать?'
       = f.check_box :is_published
     .actions

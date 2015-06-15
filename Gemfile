@@ -29,6 +29,7 @@ gem 'babosa'
 gem 'mail_form'
 gem 'dynamic_sitemaps'
 gem 'cancancan'
+gem 'metamagic'
 group :production do
   gem 'whenever', :require => false
 end

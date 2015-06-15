@@ -1,4 +1,5 @@
 = render 'static/header'
+-meta title: "#{t('home.portfolio')} - #{translate_content @album.title_ru, @album.title_by, nil}"
 .wrapper
   .album-title.animated.bounceInLeft
     %h2
@@ -23,6 +24,7 @@
           %a.next.next-stage{:href => '#'}
             %span ›
   - else
-    = t('portfolio.blank_album')
+    %span.has-no
+      = t('portfolio.blank_album')
 
 = render 'static/footer'
