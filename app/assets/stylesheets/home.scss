@@ -898,18 +898,16 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 
   .hero {
     width: 160px;
-    height: 210px;
+    height: 200px;
+
+    .blink {
+      display: none;
+    }
   }
 
-  .portfolio .albums .album .head-image {
-    overflow: hidden;
-    width: 100%;
-    height: 150px;
-  }
-
-  .portfolio .albums .album {
-    width: 45%;
-    height: 150px;
+  section.first .first-section-wrapper {
+    width: 600px;
+    height: 230px;
   }
 
   section.first .first-section-wrapper .phones .info {
@@ -924,16 +922,15 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 
   #header_inner {
     height: 80px;
-    background: url("/assets/header_bg-2a5cfb7aa98e80caa3d89a090a8ef67ff67bee1052bff2969db73d55a5c5c535.jpg") no-repeat top center;
-    background-size: 42%;
   }
 
   #header {
-    background: none;
 
     a.logo {
       left: 0;
-      top: 20px;
+      top: 10px;
+      height: 50px;
+      width: 200px;
     }
 
     #navigation {
@@ -948,5 +945,19 @@ and (-webkit-min-device-pixel-ratio: 1)  {
         padding: 10px 8px 10px 8px;
       }
     }
+  }
+
+
+
+
+  .portfolio .albums .album .head-image {
+    overflow: hidden;
+    width: 100%;
+    height: 150px;
+  }
+
+  .portfolio .albums .album {
+    width: 45%;
+    height: 150px;
   }
 }
