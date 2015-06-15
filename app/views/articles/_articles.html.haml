@@ -15,7 +15,7 @@
             = image_tag 'remove.png', alt: 'Удалить статью'
           = link_to edit_article_path(article), class: 'remove edit-article', data: { no_turbolink: true } do
             = image_tag 'edit.png', alt: 'Изменить статью'
-          = link_to article_path(article), class: 'remove show-article', data: { no_turbolink: true } do
+          = link_to article_path(article), class: 'remove show-article', target: 'blank', data: { no_turbolink: true } do
             = image_tag 'show.png', alt: 'Изменить статью'
 - else
   .has_no
