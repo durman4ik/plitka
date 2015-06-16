@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title_ru, use: :slugged
+  friendly_id :title_ru, use: [:slugged, :finders]
 
   mount_uploader :head_image, ImageUploader
 
@@ -15,7 +15,4 @@ class Article < ActiveRecord::Base
 
   scope :published, -> { where(is_published:  true) }
 
-  def normalize_friendly_id(input)
-    input.to_slug.normalize(transliterations: :russian).to_s
-  end
 end

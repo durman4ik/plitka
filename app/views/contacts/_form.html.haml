@@ -1,6 +1,11 @@
 .contact-inner.animated.bounceInRight
   %h5
     = t('about.ask_question')
+  %span.sent
+    = flash[:sent]
+  %span.does_not_sent
+    = flash[:does_not_sent]
+    = flash[:does_not_sent_massage]
   = form_for :contact, url: contacts_path, remote: true, html: { id: 'contact-form', class: nil} do |f|
     %fieldset
       .form-group

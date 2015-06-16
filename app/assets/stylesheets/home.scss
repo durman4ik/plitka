@@ -788,6 +788,19 @@
           margin: 15px 0 25px;
           text-transform: uppercase;
         }
+
+        .sent {
+          top: 36px;
+          right: 36px;
+          color: #088047;
+          font-size: 13px;
+          position: absolute;
+        }
+
+        .does_not_sent {
+          color: #8d0f0f;
+          font-size: 13px;
+        }
       }
     }
 
@@ -1175,6 +1188,12 @@
 
     .write-us {
 
+      .contact-inner {
+        .sent {
+          position: inherit;
+        }
+      }
+
       fieldset {
 
         .form-group {
@@ -1497,6 +1516,16 @@
   .about-third .call-us, .about-third .write-us {
     height: 100%;
     width: 100%;
+
+    .contact-inner {
+      .sent {
+        position: inherit;
+      }
+    }
+  }
+
+  .about-third .write-us {
+    padding-top: 10px;
   }
 }
 

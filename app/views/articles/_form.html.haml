@@ -1,5 +1,5 @@
 .input-form
-  = form_for(:article, url: get_article_url(@article), method: (:patch if action_name == 'edit')) do |f|
+  = form_for @article do |f|
     .field
       = f.label 'Название на русском'
       = f.text_field :title_ru, required: true

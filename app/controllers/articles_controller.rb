@@ -21,12 +21,12 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     respond_to do |format|
-      if @article.save!
+      if @article.save
         flash[:notice] = 'Статья успешно создана!'
         format.html { redirect_to dashboard_articles_path }
       else
         flash[:error] = "Ошибка! Не удалось создать статью!\n" + "#{@article.errors.values.join("\n")}"
-        format.html { redirect_to dashboard_articles_path }
+        format.html { render :new }
       end
     end
   end
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to dashboard_articles_path }
       else
         flash[:error] = "Ошибка! Не удалось изменить статью!\n" + "#{@article.errors.values.join("\n")}"
-        format.html { redirect_to dashboard_articles_path }
+        format.html { render :edit }
       end
     end
   end
