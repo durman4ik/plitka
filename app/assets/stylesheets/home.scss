@@ -33,7 +33,7 @@
   #header {
     background: url(asset-path('header_bg.jpg')) no-repeat top center;
     width: 100%;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
   }
 
   #header, #header_inner {
@@ -886,7 +886,7 @@
 }
 
 
-@media (max-width: 43.75em) {
+@media (max-width: 800px) and (min-width: 450px) {
   .header-m {
     display: none;
   }
