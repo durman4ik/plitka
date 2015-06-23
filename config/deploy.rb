@@ -32,7 +32,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
-# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/sitemaps}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -77,16 +77,6 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
-end
-
-namespace :sitemaps do
-  task :create_symlink do
-    on roles(:web) do
-      run "mkdir -p #{shared_path}/sitemaps"
-      run "rm -rf #{release_path}/public/sitemaps"
-      run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
-    end
-  end
 end
 
 # ps aux | grep puma    # Get puma pid
